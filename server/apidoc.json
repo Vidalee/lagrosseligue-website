@@ -1,7 +1,7 @@
 {
-  "name": "Tesseract backend API",
+  "name": "La Grosse Ligue backend API",
   "version": "0.0.1",
-  "description": "Documentation of Tesseract's backend API",
-  "title": "Tesseract backend API documentation",
-  "url": "https://api.tesseract-game.net"
+  "description": "Documentation of La Grosse Ligue's backend API",
+  "title": "La Grosse Ligue backend API documentation",
+  "url": "https://gl.vivide.re."
 }
