@@ -15,7 +15,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "cross-env": "^5.2.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.20",
     "nuxt": "^2.13.1",
     "nuxt-buefy": "^0.3.2"
   },
