@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import Members from '~/components/team/members'
+import Members from '~/components/team/Members'
 
 export default {
   components: {
