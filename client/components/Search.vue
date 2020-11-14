@@ -5,7 +5,7 @@
         <b>Selected:</b> {{ selected }}
       </p-->
       <h2 class="title is-2" style="margin-bottom:20px;color:white!important;">
-        Chercher un joueur <s>ou une équipe</s> (pas encore)
+        Chercher un joueur ou une équipe
       </h2>
       <b-field>
         <b-autocomplete
@@ -17,18 +17,25 @@
           @focus="ping('focus')"
           @typing="ping('typing')"
           @input="getAsyncData"
-          @select="option => select(option.summonerName)"
+          @select="option => select(option)"
         >
           <template slot-scope="props">
             <div class="media">
               <div class="media-left">
                 <img width="32" :src="`https://cdn.communitydragon.org/latest/profile-icon/${props.option.profileIcon}`">
               </div>
-              <div class="media-content">
+              <div v-if="props.option.summonerName" class="media-content">
                 {{ props.option.summonerName }}
                 <br>
                 <small>
                   Palier {{ props.option.palier }}
+                </small>
+              </div>
+              <div v-else class="media-content">
+                Équipe {{ props.option.name }}
+                <br>
+                <small>
+                  {{ props.option.custom_fields.universite }} | Palier {{ props.option.palier }}
                 </small>
               </div>
             </div>
@@ -64,6 +71,7 @@ export default {
         .get(this.$axios.defaults.baseURL + 'search/' + name)
         .then(({ data }) => {
           this.data = []
+          console.log(this.data)
           data.forEach(item => this.data.push(item))
         })
         .catch(error => {
@@ -79,8 +87,10 @@ export default {
           this.isFetching = false
         })
     }, 500),
-    select: function(name) {
-      this.$router.push('/summoner/' + name)
+    select: function(option) {
+      if (option.summonerName)
+        this.$router.push('/summoner/' + option.summonerName)
+      else this.$router.push('/team/' + option.name)
     }
   }
 }
