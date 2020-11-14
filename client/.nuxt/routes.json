@@ -1,0 +1,23 @@
+[
+  {
+    "name": "summoner-summonerName",
+    "path": "/summoner/:summonerName?",
+    "component": "D:\\\\Code\\\\Riot-Projects\\\\WebCrawler\\\\client\\\\pages\\\\summoner\\\\_summonerName.vue",
+    "chunkName": "pages/summoner/_summonerName",
+    "_name": "_1505e1db"
+  },
+  {
+    "name": "team-teamName",
+    "path": "/team/:teamName?",
+    "component": "D:\\\\Code\\\\Riot-Projects\\\\WebCrawler\\\\client\\\\pages\\\\team\\\\_teamName.vue",
+    "chunkName": "pages/team/_teamName",
+    "_name": "_f26b470a"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "D:\\\\Code\\\\Riot-Projects\\\\WebCrawler\\\\client\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_2d33a2a3"
+  }
+]
