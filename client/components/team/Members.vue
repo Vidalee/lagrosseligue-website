@@ -35,7 +35,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .member-icon-background {
   z-index: 1;
   height: 200px;

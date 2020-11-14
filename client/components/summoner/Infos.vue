@@ -50,7 +50,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .rounded {
   border-radius: 50%;
 }
