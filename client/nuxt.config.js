@@ -39,7 +39,6 @@ module.exports = {
       }
     ]
   },
-
   /*
   ** Customize the progress-bar color
   */
@@ -53,7 +52,7 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [],
+  plugins: [{ src: '~data/ga.js', mode: 'client' }],
 
   /*
   ** Nuxt.js modules
