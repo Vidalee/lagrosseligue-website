@@ -1,6 +1,12 @@
 const pkg = require('./package')
 
 module.exports = {
+  vue: {
+    config: {
+      productionTip: true,
+      devtools: false
+    }
+  },
   mode: 'spa',
 
   /*
@@ -61,7 +67,7 @@ module.exports = {
   ** Axios module configuration
   */
   axios: {
-    baseURL: 'http://localhost:3001/'
+    baseURL: 'https://api.gl.vivide.re/'
     // See https://github.com/nuxt-community/axios-module#options
   },
 
