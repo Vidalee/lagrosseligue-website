@@ -18,12 +18,8 @@
           Accueil
         </router-link>
 
-        <a class="navbar-item tile-color">
+        <a class="navbar-item tile-color" style="visibility: hidden">
           Statistiques
-        </a>
-
-        <a class="navbar-item tile-color">
-          Équipe
         </a>
       </div>
 
