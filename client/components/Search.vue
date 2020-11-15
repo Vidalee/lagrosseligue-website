@@ -14,6 +14,7 @@
           field="title"
           :loading="isFetching"
           size="is-large"
+          keep-first="true"
           @focus="ping('focus')"
           @typing="ping('typing')"
           @input="getAsyncData"
@@ -25,6 +26,9 @@
                 <img width="32" :src="`https://cdn.communitydragon.org/latest/profile-icon/${props.option.profileIcon}`">
               </div>
               <div v-if="props.option.summonerName" class="media-content">
+                <span class="tag is-primary">
+                  Joueur
+                </span>
                 {{ props.option.summonerName }}
                 <br>
                 <small>
@@ -32,7 +36,10 @@
                 </small>
               </div>
               <div v-else class="media-content">
-                Équipe {{ props.option.name }}
+                <span class="tag is-success">
+                  Équipe
+                </span>
+                {{ props.option.name }}
                 <br>
                 <small>
                   {{ props.option.custom_fields.universite }} | Palier {{ props.option.palier }}
@@ -108,8 +115,8 @@ export default {
   border-radius: 20px;
   position: absolute;
   margin: auto;
-  height: 100px;
-  width: 1000px;
+  max-height: 100px;
+  max-width: 1000px;
   top: 0;
   right: 0;
   bottom: 0;

@@ -7,17 +7,17 @@ module.exports = {
     return new Promise(resolve => {
       main.r
         .db("GL5")
-        .table("playersFiltered")
+        .table("teams")
         .filter(function (player) {
-          return player("summonerName").match(`(?i)^${request.params.name}.*`)
+          return player("name").match(`(?i)^${request.params.name}.*`)
         })
         .run()
         .then(function (response) {
           main.r
             .db("GL5")
-            .table("teams")
+            .table("playersFiltered")
             .filter(function (player) {
-              return player("name").match(`(?i)^${request.params.name}.*`)
+              return player("summonerName").match(`(?i)^${request.params.name}.*`)
             })
             .run()
             .then(function (response2) {
