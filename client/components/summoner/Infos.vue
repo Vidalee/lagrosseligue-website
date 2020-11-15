@@ -15,6 +15,9 @@
           <span class="tag is-success">
             {{ json.region }}
           </span>
+          <span v-if="json.soloRank != ''" class="tag is-info">
+            {{ json.soloRank }}
+          </span>
         </h1>
         <div style="margin:20px;display:inline-block;">
           Équipe actuelle :

@@ -9,9 +9,9 @@
       <h1 class="title is-3 text-color" style="margin-top:110px;margin-left:20px;margin-right:20px;">
         {{ member.summonerName }}
         <br>
-        <!--span v-if="member.title" class="tag is-primary">
-          {{ member.title }}
-        </span-->
+        <span v-if="member.soloRank != ''" class="tag is-info">
+          {{ member.soloRank }}
+        </span>
       </h1>
     </div>
   </div>
@@ -21,7 +21,7 @@
 export default {
   props: {
     json: {
-      type: Object,
+      type: Array,
       required: true
     }
   },
