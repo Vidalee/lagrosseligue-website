@@ -14,7 +14,7 @@
           field="title"
           :loading="isFetching"
           size="is-large"
-          keep-first="true"
+          :keep-first="keepFirst"
           @focus="ping('focus')"
           @typing="ping('typing')"
           @input="getAsyncData"
@@ -65,7 +65,8 @@ export default {
     return {
       data: [],
       selected: null,
-      isFetching: false
+      isFetching: false,
+      keepFirst: true
     }
   },
   methods: {
