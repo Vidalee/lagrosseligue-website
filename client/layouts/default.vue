@@ -17,8 +17,10 @@ export default {
   },
   data: () => {
     return {
-      darkTheme: localStorage.getItem('theme')
+      darkTheme: process.browser
         ? localStorage.getItem('theme')
+          ? localStorage.getItem('theme')
+          : 'light'
         : 'light'
     }
   }
