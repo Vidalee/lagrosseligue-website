@@ -80,7 +80,6 @@ export default {
       )
     },
     changePage: function() {
-      console.log('bye')
       this.showNav = false
     }
   }

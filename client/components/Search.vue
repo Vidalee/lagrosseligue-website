@@ -15,8 +15,6 @@
           :loading="isFetching"
           size="is-large"
           :keep-first="keepFirst"
-          @focus="ping('focus')"
-          @typing="ping('typing')"
           @input="getAsyncData"
           @select="option => select(option)"
         >
