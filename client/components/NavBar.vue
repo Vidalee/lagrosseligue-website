@@ -5,14 +5,21 @@
         <img src="/GL_logo_png.png">
       </router-link>
 
-      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <a
+        role="button"
+        :class="{ 'is-active': showNav }"
+        class="navbar-burger"
+        aria-label="menu"
+        aria-expanded="false"
+        @click="showNav = !showNav"
+      >
         <span aria-hidden="true" />
         <span aria-hidden="true" />
         <span aria-hidden="true" />
       </a>
     </div>
 
-    <div id="navbarBasicExample" class="navbar-menu">
+    <div id="navMenu" class="navbar-menu color-bg" :class="{ 'is-active': showNav }">
       <div class="navbar-start">
         <router-link class="navbar-item tile-color" to="/">
           Accueil
@@ -26,12 +33,12 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="field">
-            <b-switch v-model="darktheme" class="text-color" @input="darkmode">
+            <b-switch :value="isDark" class="text-color" @input="darkmode">
               Mode sombre
             </b-switch>
           </div>
         </div>
-        <div class="navbar-item">
+        <div class="navbar-item color-bg">
           <div class="buttons">
             <a href="https://discord.gg/lagrosseligue" class="button has-text-white" style="background-color: #7289DA;" target="_blank">
               <strong>Discord</strong>
@@ -52,6 +59,16 @@ export default {
     darktheme: {
       type: Boolean,
       required: true
+    }
+  },
+  data() {
+    return {
+      showNav: false
+    }
+  },
+  computed: {
+    isDark() {
+      return this.darktheme
     }
   },
   methods: {
