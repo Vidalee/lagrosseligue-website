@@ -94,7 +94,6 @@
                 <p style="font-size: xx-large">
                   {{ stats.pentakills.players.length }}
                 </p>
-                // eslint-disable-next-line vue/no-v-html
                 <div v-html="stats.pentakills.players.map(p => `<a class='icon-link' href='/summoner/${p.summonerName}'>${p.summonerName}</a>`).join(', ')" />
               </div>
             </article>
