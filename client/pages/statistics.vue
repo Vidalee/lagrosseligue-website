@@ -204,7 +204,7 @@ export default {
   components: {},
   head() {
     return {
-      title: 'La Grosse Ligue'
+      title: 'La Grosse Ligue -  Statistiques'
     }
   },
   asyncData({ app, params }) {
