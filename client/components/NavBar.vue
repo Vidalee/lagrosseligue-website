@@ -18,9 +18,9 @@
           Accueil
         </router-link>
 
-        <a class="navbar-item tile-color" style="visibility: hidden">
+        <router-link class="navbar-item tile-color" to="/statistics">
           Statistiques
-        </a>
+        </router-link>
       </div>
 
       <div class="navbar-end">
