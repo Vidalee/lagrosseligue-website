@@ -84,6 +84,7 @@ export default {
           this.data = []
           console.log(this.data)
           data.forEach(item => this.data.push(item))
+          data = data.reverse()
         })
         .catch(error => {
           this.data = []
