@@ -1,6 +1,6 @@
 <template>
   <div class="tile is-parent is-vertical">
-    <br>
+    <br v-if="isBoulet(json.name)">
     <b-notification v-if="isBoulet(json.name)" type="is-danger" aria-close-label="Close notification">
       Un des matchs de cette équipe ne s'est pas fait avec le bon code de tournoi, faussant les informations.
     </b-notification>
@@ -27,7 +27,7 @@
         <Members :json="json.players" />
       </div>
       <!--pls help :(-->
-      <br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </article>
   </div>
 </template>
@@ -87,7 +87,7 @@ export default {
 }
 
 .profile-banner {
-  height: 700px;
+  min-height: 700px;
   width: 100%;
   border-radius: 5px;
   position: absolute;
@@ -96,8 +96,6 @@ export default {
   left: 0;
   text-align: center;
   display: block;
-  overflow-y: auto;
-  overflow-x: hidden;
 }
 </style>
 
