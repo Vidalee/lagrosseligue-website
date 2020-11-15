@@ -1,12 +1,12 @@
 <template>
   <section class="section">
-    <br><br>
+    <br>
     <div class="tile is-ancestor">
       <div class="tile is-vertical is-14">
         <div class="tile">
           <div class="tile is-parent is-vertical">
-            <article class="tile is-child notification color-bg text-color">
-              <div class="vertical-center">
+            <article class="tile is-child notification color-bg text-color box">
+              <div class="box-child">
                 <p class="title">
                   Nombre de kills
                 </p>
@@ -18,8 +18,8 @@
           </div>
           
           <div class="tile is-parent is-vertical">
-            <article class="tile is-child notification color-bg text-color">
-              <div class="vertical-center">
+            <article class="tile is-child notification color-bg text-color box">
+              <div class="box-child">
                 <p class="title">
                   Nombre de sbires tués
                 </p>
@@ -30,8 +30,8 @@
             </article>
           </div>
           <div class="tile is-parent is-vertical">
-            <article class="tile is-child notification color-bg text-color">
-              <div class="vertical-center">
+            <article class="tile is-child notification color-bg text-color box">
+              <div class="box-child">
                 <p class="title">
                   Nombre de dégâts infligés aux champions
                 </p>
@@ -42,8 +42,8 @@
             </article>
           </div>
           <div class="tile is-parent is-vertical">
-            <article class="tile is-child notification color-bg text-color">
-              <div class="vertical-center">
+            <article class="tile is-child notification color-bg text-color box">
+              <div class="box-child">
                 <p class="title">
                   Argent dépensé
                 </p>
@@ -60,8 +60,8 @@
       <div class="tile is-vertical is-12">
         <div class="tile">
           <div class="tile is-parent is-vertical">
-            <article class="tile is-child notification color-bg text-color">
-              <div class="vertical-center">
+            <article class="tile is-child notification color-bg text-color box">
+              <div class="box-child">
                 <p class="title">
                   Champion le plus joué
                 </p>
@@ -74,8 +74,8 @@
             </article>
           </div>
           <div class="tile is-parent is-vertical">
-            <article class="tile is-child notification color-bg text-color">
-              <div class="vertical-center">
+            <article class="tile is-child notification color-bg text-color box">
+              <div class="box-child">
                 <p class="title">
                   Nombre de parties totales
                 </p>
@@ -86,8 +86,8 @@
             </article>
           </div>
           <div class="tile is-parent is-vertical">
-            <article class="tile is-child notification color-bg text-color">
-              <div class="vertical-center">
+            <article class="tile is-child notification color-bg text-color box">
+              <div class="box-child">
                 <p class="title">
                   Pentakills
                 </p>
@@ -105,8 +105,8 @@
       <div class="tile is-vertical is-12">
         <div class="tile">
           <div class="tile is-parent is-vertical">
-            <article class="tile is-child notification color-bg text-color">
-              <div class="vertical-center">
+            <article class="tile is-child notification color-bg text-color box">
+              <div class="box-child">
                 <p class="title">
                   Meilleur KDA moyen
                 </p>
@@ -127,8 +127,8 @@
             </article>
           </div>
           <div class="tile is-parent is-vertical">
-            <article class="tile is-child notification color-bg text-color">
-              <div class="vertical-center">
+            <article class="tile is-child notification color-bg text-color box">
+              <div class="box-child">
                 <p class="title">
                   Plus de sbires tuées en moyenne
                 </p>
@@ -149,8 +149,8 @@
             </article>
           </div>
           <div class="tile is-parent is-vertical">
-            <article class="tile is-child notification color-bg text-color">
-              <div class="vertical-center">
+            <article class="tile is-child notification color-bg text-color box">
+              <div class="box-child">
                 <p class="title">
                   Meilleure score de vision moyen
                 </p>
@@ -171,8 +171,8 @@
             </article>
           </div>
           <div class="tile is-parent is-vertical">
-            <article class="tile is-child notification color-bg text-color">
-              <div class="vertical-center">
+            <article class="tile is-child notification color-bg text-color box">
+              <div class="box-child">
                 <p class="title">
                   Temps le plus long passé en vie
                 </p>
@@ -212,25 +212,6 @@ export default {
     return app.$axios
       .get(app.$axios.defaults.baseURL + 'statistics')
       .then(res => {
-        res.data.pentakills.players = [
-          { profileIcon: 1113, summonerName: 'TheWhiteWomen' },
-          { profileIcon: 7, summonerName: 'Codiea' },
-          { profileIcon: 4216, summonerName: 'LiMouX' },
-          { profileIcon: 4645, summonerName: 'Croaa' },
-          { profileIcon: 4574, summonerName: 'YeIIow Power' },
-          { profileIcon: 4363, summonerName: 'Okariηa' },
-          { profileIcon: 3151, summonerName: 'Joëlle la Truite' },
-          { profileIcon: 4802, summonerName: 'grey0909' },
-          { profileIcon: 4822, summonerName: 'Wizzer Mechanics' },
-          { profileIcon: 3184, summonerName: 'RR Sididi' },
-          { profileIcon: 577, summonerName: 'Momo Faker' },
-          { profileIcon: 3155, summonerName: 'Feengh' },
-          { profileIcon: 3550, summonerName: 'Iridius' },
-          { profileIcon: 4795, summonerName: 'Shownah' },
-          { profileIcon: 4801, summonerName: 'NIC LA PANIC' },
-          { profileIcon: 4658, summonerName: 'PROJECT AsheSMR' },
-          { profileIcon: 3898, summonerName: 'Xaladoomed' }
-        ]
         return { stats: res.data }
       })
   },
@@ -285,6 +266,15 @@ body {
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+  text-align: center;
+}
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box-child {
   text-align: center;
 }
 .member-icon-background {
