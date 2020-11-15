@@ -2,7 +2,7 @@
   <section class="section">
     <br v-if="isBoulet(summoner.participant.name)">
     <b-notification v-if="isBoulet(summoner.participant.name)" type="is-danger" aria-close-label="Close notification">
-      Un des matchs de ce joueur ne s'est pas fait avec le bon code de tournoi, faussant les informations
+      Un des matchs de ce joueur ne s'est pas fait avec le bon code de tournoi, faussant les informations.
     </b-notification>
     <div class="tile is-ancestor">
       <div class="tile is-vertical is-8">

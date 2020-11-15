@@ -2,7 +2,7 @@
   <div class="tile is-parent is-vertical">
     <br>
     <b-notification v-if="isBoulet(json.name)" type="is-danger" aria-close-label="Close notification">
-      Un des matchs de cette équipe ne s'est pas fait avec le bon code de tournoi, faussant les informations
+      Un des matchs de cette équipe ne s'est pas fait avec le bon code de tournoi, faussant les informations.
     </b-notification>
     <article class="tile is-child notification infos">
       <div class="rounded profile-icon-background color-bg">
