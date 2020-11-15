@@ -1,6 +1,6 @@
 <template>
   <section class="section">
-    <br>
+    <br v-if="isBoulet(summoner.participant.name)">
     <b-notification v-if="isBoulet(summoner.participant.name)" type="is-danger" aria-close-label="Close notification">
       Un des matchs de ce joueur ne s'est pas fait avec le bon code de tournoi, faussant les informations
     </b-notification>
