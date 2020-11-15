@@ -5,7 +5,7 @@
         Historique de parties
       </p>
       <div class="content" style="max-height:700px;overflow:auto;">
-        <article v-for="game in json.games.sort((game) => game.gameCreation).reverse()" :key="game.stats.goldEarned" class="media clean" :style="'background-color: ' + (game.stats.win ? 'hsl(171, 100%, 41%)' : 'hsl(348, 100%, 61%);')">
+        <article v-for="game in json.games" :key="game.stats.goldEarned" class="media clean" :style="'background-color: ' + (game.stats.win ? 'hsl(171, 100%, 41%)' : 'hsl(348, 100%, 61%);')">
           <figure class="media-left is-danger has-text-centered figure-equi" style="margin:0px;height:84px;width:84px;">
             <img
               :src="'https://cdn.communitydragon.org/latest/champion/' + game.championId + '/square'"
@@ -54,20 +54,6 @@ export default {
       type: Object,
       required: true
     }
-  },
-  created: function() {
-    this.json.games.forEach(game => {
-      game.stats.items = []
-      game.stats.items.push(game.stats.item0)
-      game.stats.items.push(game.stats.item1)
-      game.stats.items.push(game.stats.item2)
-      game.stats.items.push(game.stats.item3)
-      game.stats.items.push(game.stats.item4)
-      game.stats.items.push(game.stats.item5)
-      /* game.stats.items = game.stats.items.filter(item => {
-        return item !== 0
-      }) */
-    })
   },
   methods: {
     date: function(timestamp) {

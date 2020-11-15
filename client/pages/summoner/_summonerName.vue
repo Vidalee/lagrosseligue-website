@@ -38,6 +38,18 @@ export default {
     return app.$axios
       .get(app.$axios.defaults.baseURL + 'summoner/' + params.summonerName)
       .then(res => {
+        res.data.games.forEach(game => {
+          game.stats.items = []
+          // Courtesy of Maxime
+          for (let i = 0; i < 6; i++) {
+            game.stats.items.push(game.stats[`item${i}`])
+          }
+        })
+
+        res.data.games = res.data.games
+          .sort(game => game.gameCreation)
+          .reverse()
+
         return { summoner: res.data }
       })
   },
