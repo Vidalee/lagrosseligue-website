@@ -4,7 +4,7 @@
       <p class="title text-color">
         Historique de parties
       </p>
-      <div class="content" style="height:700px;overflow:auto;">
+      <div class="content" style="max-height:700px;overflow:auto;">
         <article v-for="game in json.games.sort((game) => game.gameCreation).reverse()" :key="game.stats.goldEarned" class="media clean" :style="'background-color: ' + (game.stats.win ? 'hsl(171, 100%, 41%)' : 'hsl(348, 100%, 61%);')">
           <figure class="media-left is-danger has-text-centered figure-equi" style="margin:0px;height:84px;width:84px;">
             <img
