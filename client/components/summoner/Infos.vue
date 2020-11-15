@@ -19,10 +19,10 @@
             {{ json.soloRank }}
           </span>
         </h1>
-        <div style="margin:20px;display:inline-block;">
+        <div style="margin:20px;display:inline-block;vertical-align:middle;">
           Équipe actuelle :
-          <router-link :to="'/team/' + json.participant.name">
-            <button class="button is-primary" style="line-height:50px">
+          <router-link :to="'/team/' + json.participant.name" style="display:inline-block;vertical-align:middle;">
+            <button class="button is-primary">
               {{ json.participant.name }}
             </button>
           </router-link><br><br>
