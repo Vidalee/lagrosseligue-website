@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar is-fixed-top tile-color" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <router-link class="navbar-item" to="/">
+      <router-link class="navbar-item" to="/" @click.native="changePage">
         <img src="/GL_logo_png.png">
       </router-link>
 
@@ -21,11 +21,11 @@
 
     <div id="navMenu" class="navbar-menu color-bg" :class="{ 'is-active': showNav }">
       <div class="navbar-start">
-        <router-link class="navbar-item tile-color" to="/">
+        <router-link class="navbar-item tile-color" to="/" @click.native="changePage">
           Accueil
         </router-link>
 
-        <router-link class="navbar-item tile-color" to="/statistics">
+        <router-link class="navbar-item tile-color" to="/statistics" @click.native="changePage">
           Statistiques
         </router-link>
       </div>
@@ -78,6 +78,10 @@ export default {
         'data-theme',
         value ? 'dark' : 'light'
       )
+    },
+    changePage: function() {
+      console.log('bye')
+      this.showNav = false
     }
   }
 }
