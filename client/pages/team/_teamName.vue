@@ -25,7 +25,7 @@ export default {
   },
   asyncData({ app, params }) {
     return app.$axios
-      .get(app.$axios.defaults.baseURL + 'team/' + params.teamName)
+      .get(app.$axios.defaults.baseURL + 'team/' + encodeURI(params.teamName))
       .then(res => {
         return { team: res.data }
       })

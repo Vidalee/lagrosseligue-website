@@ -36,7 +36,7 @@ export default {
   },
   asyncData({ app, params }) {
     return app.$axios
-      .get(app.$axios.defaults.baseURL + 'summoner/' + params.summonerName)
+      .get(app.$axios.defaults.baseURL + 'summoner/' + encodeURI(params.summonerName))
       .then(res => {
         res.data.games.forEach(game => {
           game.stats.items = []
