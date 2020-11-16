@@ -5,6 +5,7 @@
     <section class="main-content">
       <nuxt />
     </section>
+    <CookieControl style="bg-color" />
   </div>
 </template>
 
@@ -23,6 +24,12 @@ export default {
           : 'light'
         : 'light'
     }
+  },
+  mounted() {
+    const theme = localStorage.getItem('theme')
+    if (theme && process.browser) {
+      this.darkTheme = theme
+    } else this.darkTheme = theme
   }
 }
 </script>
@@ -49,12 +56,16 @@ export default {
   background-color: var(--button-bg-color);
   transition: all 0.3s;
 }
-
 .color-bg {
   background-color: var(--bg-color) !important;
+
   transition: all 0.3s;
 }
-
+.cookieControl {
+  background-color: var(--bg-color) !important;
+  border-radius: 5px !important;
+  transition: all 0.3s;
+}
 .color-bg-reverse {
   background-color: var(--bg-color-reverse) !important;
   transition: all 0.3s;
