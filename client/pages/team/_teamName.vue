@@ -39,7 +39,9 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: `Informations sur l'équipe ${this.team.name} | Palier ${this.team.palier} | Région ${this.team.region}`
+          content: `Informations sur l'équipe ${this.team.name} | Palier ${
+            this.team.palier
+          } | Région ${this.team.region}`
         }
       ]
     }
