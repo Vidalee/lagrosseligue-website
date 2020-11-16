@@ -36,7 +36,11 @@ export default {
   },
   asyncData({ app, params }) {
     return app.$axios
-      .get(app.$axios.defaults.baseURL + 'summoner/' + encodeURI(params.summonerName))
+      .get(
+        app.$axios.defaults.baseURL +
+          'summoner/' +
+          encodeURI(params.summonerName)
+      )
       .then(res => {
         res.data.games.forEach(game => {
           game.stats.items = []
@@ -60,7 +64,20 @@ export default {
   },
   head() {
     return {
-      title: 'La Grosse Ligue - ' + this.summoner.summonerName
+      title: 'La Grosse Ligue - ' + this.summoner.summonerName,
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        {
+          hid: 'description',
+          name: 'description',
+          content: `Informations sur le joueur ${this.summoner.summonerName} ${
+            this.summoner.soloRank.length ? ' | ' + this.summoner.soloRank : ''
+          } | Équipe ${this.summoner.participant.name} | Palier ${
+            this.summoner.palier
+          } | Région ${this.summoner.region}`
+        }
+      ]
     }
   }
 }

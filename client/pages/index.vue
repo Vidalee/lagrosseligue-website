@@ -13,7 +13,16 @@ export default {
   },
   head() {
     return {
-      title: 'La Grosse Ligue'
+      title: 'La Grosse Ligue',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'La Grosse Ligue Statistiques'
+        }
+      ]
     }
   }
 }

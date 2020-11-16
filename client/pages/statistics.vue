@@ -205,7 +205,16 @@ export default {
   components: {},
   head() {
     return {
-      title: 'La Grosse Ligue -  Statistiques'
+      title: 'La Grosse Ligue -  Statistiques',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Statistiques générales du tournoi.'
+        }
+      ]
     }
   },
   asyncData({ app, params }) {
