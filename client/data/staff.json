@@ -1,0 +1,141 @@
+[
+    {
+        "name": "Twelverino",
+        "tags": [
+            {
+                "class": "is-danger",
+                "value": "Officiel"
+            }
+        ]
+    },
+    {
+        "name": "Twelverino2",
+        "tags": [
+            {
+                "class": "is-danger",
+                "value": "Officiel"
+            }
+        ]
+    },
+    {
+        "name": "Twelverino3",
+        "tags": [
+            {
+                "class": "is-danger",
+                "value": "Officiel"
+            },
+            {
+                "class": "is-sucess",
+                "value": "Patate"
+            }
+        ]
+    },
+    {
+        "name": "Twelverino4",
+        "tags": [
+            {
+                "class": "is-danger",
+                "value": "Officiel"
+            }
+        ]
+    },
+    {
+        "name": "Twelverino5",
+        "tags": [
+            {
+                "class": "is-warning",
+                "value": "Admin"
+            }
+        ]
+    },
+    {
+        "name": "Twelverino6",
+        "tags": [
+            {
+                "class": "is-warning",
+                "value": "Admin"
+            }
+        ]
+    },
+    {
+        "name": "Twelverino7",
+        "tags": [
+            {
+                "class": "is-warning",
+                "value": "Admin"
+            }
+        ]
+    },
+    {
+        "name": "Twelverino8",
+        "tags": [
+            {
+                "class": "is-warning",
+                "value": "Admin"
+            }
+        ]
+    },
+    {
+        "name": "Twelverino9",
+        "tags": [
+            {
+                "class": "is-warning",
+                "value": "Admin"
+            }
+        ]
+    },
+    {
+        "name": "Twelverino10",
+        "tags": [
+            {
+                "class": "is-warning",
+                "value": "Admin"
+            }
+        ]
+    },
+    {
+        "name": "Twelverino11",
+        "tags": [
+            {
+                "class": "is-warning",
+                "value": "Admin"
+            }
+        ]
+    },
+    {
+        "name": "Twelverino12",
+        "tags": [
+            {
+                "class": "is-warning",
+                "value": "Admin"
+            }
+        ]
+    },
+    {
+        "name": "Twelverino13",
+        "tags": [
+            {
+                "class": "is-warning",
+                "value": "Admin"
+            }
+        ]
+    },
+    {
+        "name": "Twelverino14",
+        "tags": [
+            {
+                "class": "is-warning",
+                "value": "Admin"
+            }
+        ]
+    },
+    {
+        "name": "Twelverino15",
+        "tags": [
+            {
+                "class": "is-warning",
+                "value": "Admin"
+            }
+        ]
+    }
+]

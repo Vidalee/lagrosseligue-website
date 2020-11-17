@@ -20,7 +20,7 @@
             {{ json.region }}
           </span>
         </h1>
-        Universitée/École: {{ json.custom_fields.universite }}
+        Établissement: {{ json.custom_fields.universite }}
         <div v-if="json.custom_fields.coach">
           Coach: {{ json.custom_fields.coach }}
         </div>
@@ -60,7 +60,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .rounded {
   border-radius: 50%;
 }

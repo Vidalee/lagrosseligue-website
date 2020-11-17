@@ -28,6 +28,10 @@
         <router-link class="navbar-item tile-color" to="/statistics" @click.native="changePage">
           Statistiques
         </router-link>
+
+        <router-link class="navbar-item tile-color" to="/staff" @click.native="changePage">
+          Staff
+        </router-link>
       </div>
 
       <div class="navbar-end">

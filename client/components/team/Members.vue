@@ -36,6 +36,15 @@ export default {
 </script>
 
 <style scoped>
+.rounded {
+  border-radius: 50%;
+}
+
+.profile-icon {
+  height: 190px;
+  width: 190px;
+}
+
 .member-icon-background {
   z-index: 1;
   height: 200px;
@@ -52,9 +61,7 @@ export default {
   opacity: 0.5;
   transition: linear 0.1s;
 }
-</style>
 
-<style scoped>
 a {
   height: 0px;
 }
