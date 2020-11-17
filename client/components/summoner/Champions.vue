@@ -1,6 +1,6 @@
 <template>
   <div class="tile is-parent">
-    <article class="tile is-child notification under tile-color" style="min-width:600px;">
+    <article class="tile is-child notification under tile-color">
       <p class="title">
         Champions
       </p>
