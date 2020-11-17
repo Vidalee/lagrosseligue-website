@@ -94,7 +94,7 @@
                 <p style="font-size: xx-large">
                   {{ stats.pentakills.players.length }}
                 </p>
-                <div v-html="stats.pentakills.players.map(p => `<a class='icon-link' href='/summoner/${p.summonerName}'>${p.summonerName}</a>`).join(', ')" />
+                <div v-html="stats.pentakills.players.map(p => `<a href='/summoner/${p.summonerName}'>${p.summonerName}</a>`).join(', ')" />
               </div>
             </article>
           </div>
@@ -221,6 +221,7 @@ export default {
     return app.$axios
       .get(app.$axios.defaults.baseURL + 'statistics')
       .then(res => {
+        res.data.pentakills.players = [{"profileIcon":1113,"summonerName":"TheWhiteWomen"},{"profileIcon":7,"summonerName":"Codiea"},{"profileIcon":4216,"summonerName":"LiMouX"},{"profileIcon":4645,"summonerName":"Croaa"},{"profileIcon":4574,"summonerName":"YeIIow Power"},{"profileIcon":4363,"summonerName":"Okariηa"},{"profileIcon":3151,"summonerName":"Joëlle la Truite"},{"profileIcon":4802,"summonerName":"grey0909"},{"profileIcon":4822,"summonerName":"Wizzer Mechanics"},{"profileIcon":3184,"summonerName":"RR Sididi"},{"profileIcon":577,"summonerName":"Momo Faker"},{"profileIcon":3155,"summonerName":"Feengh"},{"profileIcon":3550,"summonerName":"Iridius"},{"profileIcon":4795,"summonerName":"Shownah"},{"profileIcon":4801,"summonerName":"NIC LA PANIC"},{"profileIcon":4658,"summonerName":"PROJECT AsheSMR"},{"profileIcon":3898,"summonerName":"Xaladoomed"}];
         return { stats: res.data }
       })
   },

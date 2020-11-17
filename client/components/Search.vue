@@ -49,7 +49,10 @@
       </b-field>
       <br><br><br><br><br><br>
       <p style="font-size: x-small;">
-        "GL statistics" isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc.
+        "GL statistics" isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc. 
+        <router-link :to="'/legal'">
+          Mentions légales
+        </router-link>
       </p>
     </div>
   </section>
