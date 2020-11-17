@@ -18,6 +18,7 @@ export default {
   },
   data: () => {
     return {
+      show: false,
       darkTheme: process.browser
         ? localStorage.getItem('theme')
           ? localStorage.getItem('theme')
@@ -25,11 +26,8 @@ export default {
         : 'light'
     }
   },
-  mounted() {
-    const theme = localStorage.getItem('theme')
-    if (theme && process.browser) {
-      this.darkTheme = theme
-    } else this.darkTheme = theme
+  mounted: function() {
+    this.$el.setAttribute('data-theme', localStorage.getItem('theme'))
   }
 }
 </script>
