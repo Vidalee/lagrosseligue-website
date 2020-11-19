@@ -1,6 +1,88 @@
 [
     {
-        "name": "Twelverino",
+        "name": "Marco",
+        "profileIcon": 4763,
+        "link": "https://twitter.com/M4rcodsx",
+        "tags": [
+            {
+                "class": "is-danger",
+                "value": "Officiel"
+            }
+        ]
+    }, {
+        "name": "Gwendalavir",
+        "profileIcon": 938,
+        "link": "https://twitter.com/Gwendalaviir",
+        "tags": [
+            {
+                "class": "is-danger",
+                "value": "Officiel"
+            }
+        ]
+    },{
+        "name": "Twelve",
+        "profileIcon": 3569,
+        "link": "https://bit.ly/3fgv2jl",
+        "tags": [
+            {
+                "class": "is-danger",
+                "value": "Officiel"
+            }
+        ]
+    },{
+        "name": "Twelve",
+        "profileIcon": 3569,
+        "link": "https://bit.ly/3fgv2jl",
+        "tags": [
+            {
+                "class": "is-danger",
+                "value": "Officiel"
+            }
+        ]
+    },{
+        "name": "Nigirith",
+        "profileIcon": 4572,
+        "link": "",
+        "tags": [
+            {
+                "class": "is-danger",
+                "value": "Officiel"
+            }
+        ]
+    },{
+        "name": "Dalou",
+        "profileIcon": 4248,
+        "link": "https://mobile.twitter.com/Hyotchu",
+        "tags": [
+            {
+                "class": "is-danger",
+                "value": "Officiel"
+            }
+        ]
+    },{
+        "name": "GannaLuffy",
+        "profileIcon": 4793,
+        "link": "https://twitter.com/Ganna_Luffy",
+        "tags": [
+            {
+                "class": "is-danger",
+                "value": "Officiel"
+            }
+        ]
+    },{
+        "name": "Mags",
+        "profileIcon": 937,
+        "link": "https://twitter.com/Lucas_2033",
+        "tags": [
+            {
+                "class": "is-danger",
+                "value": "Officiel"
+            }
+        ]
+    },{
+        "name": "Aatrlx",
+        "profileIcon": 4417,
+        "link": "",
         "tags": [
             {
                 "class": "is-danger",
@@ -9,7 +91,9 @@
         ]
     },
     {
-        "name": "Twelverino2",
+        "name": "Kronenn",
+        "profileIcon": 4803,
+        "link": "https://twitter.com/Kronenn_",
         "tags": [
             {
                 "class": "is-danger",
@@ -18,123 +102,53 @@
         ]
     },
     {
-        "name": "Twelverino3",
-        "tags": [
-            {
-                "class": "is-danger",
-                "value": "Officiel"
-            },
-            {
-                "class": "is-sucess",
-                "value": "Patate"
-            }
-        ]
-    },
-    {
-        "name": "Twelverino4",
+        "name": "Lilou",
+        "profileIcon": 3891,
+        "link": "https://twitter.com/LSiouta",
         "tags": [
             {
                 "class": "is-danger",
                 "value": "Officiel"
             }
         ]
-    },
-    {
-        "name": "Twelverino5",
+    },{
+        "name": "Pyra",
+        "profileIcon": 3632,
+        "link": "https://twitter.com/Pyrasux",
         "tags": [
             {
-                "class": "is-warning",
-                "value": "Admin"
+                "class": "is-danger",
+                "value": "Officiel"
             }
         ]
-    },
-    {
-        "name": "Twelverino6",
+    },{
+        "name": "Gachimaster",
+        "profileIcon": 4656,
+        "link": "https://twitter.com/Gachiiiimaster",
         "tags": [
             {
-                "class": "is-warning",
-                "value": "Admin"
+                "class": "is-danger",
+                "value": "Officiel"
             }
         ]
-    },
-    {
-        "name": "Twelverino7",
+    },{
+        "name": "Silv",
+        "profileIcon": 4668,
+        "link": "https://twitter.com/SilvOW_",
         "tags": [
             {
-                "class": "is-warning",
-                "value": "Admin"
+                "class": "is-danger",
+                "value": "Officiel"
             }
         ]
-    },
-    {
-        "name": "Twelverino8",
+    },{
+        "name": "ElBlackytos",
+        "profileIcon": 1377,
+        "link": "https://twitter.com/elblackytos",
         "tags": [
             {
-                "class": "is-warning",
-                "value": "Admin"
-            }
-        ]
-    },
-    {
-        "name": "Twelverino9",
-        "tags": [
-            {
-                "class": "is-warning",
-                "value": "Admin"
-            }
-        ]
-    },
-    {
-        "name": "Twelverino10",
-        "tags": [
-            {
-                "class": "is-warning",
-                "value": "Admin"
-            }
-        ]
-    },
-    {
-        "name": "Twelverino11",
-        "tags": [
-            {
-                "class": "is-warning",
-                "value": "Admin"
-            }
-        ]
-    },
-    {
-        "name": "Twelverino12",
-        "tags": [
-            {
-                "class": "is-warning",
-                "value": "Admin"
-            }
-        ]
-    },
-    {
-        "name": "Twelverino13",
-        "tags": [
-            {
-                "class": "is-warning",
-                "value": "Admin"
-            }
-        ]
-    },
-    {
-        "name": "Twelverino14",
-        "tags": [
-            {
-                "class": "is-warning",
-                "value": "Admin"
-            }
-        ]
-    },
-    {
-        "name": "Twelverino15",
-        "tags": [
-            {
-                "class": "is-warning",
-                "value": "Admin"
+                "class": "is-danger",
+                "value": "Officiel"
             }
         ]
     }

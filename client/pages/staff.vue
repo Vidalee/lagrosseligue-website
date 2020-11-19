@@ -5,11 +5,11 @@
         <br><br>
         <div class="box color-bg">
           <div v-for="member in shuffle(staff)" :key="member.name" style="min-height: 300px; margin:20px;" class="has-text-centered">
-            <router-link :to="'/link'" class="icon-link">
+            <a :href="member.link" target="_blank" class="icon-link">
               <div class="rounded member-icon-background" style="">
-                <img class="rounded profile-icon icon-link" :src="getIconPath(3777)" style="height: 100%; width: 100%; display:block;">
+                <img class="rounded profile-icon icon-link" :src="getIconPath(member.profileIcon)" style="height: 100%; width: 100%; display:block;">
               </div>
-            </router-link>
+            </a>
             
             <h1 class="title is-3 text-color" style="margin-top:20px;margin-left:20px;margin-right:20px;">
               {{ member.name }}
