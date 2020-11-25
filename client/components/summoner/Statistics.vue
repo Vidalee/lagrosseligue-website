@@ -88,7 +88,7 @@ export default {
     this.stats.line1.push({ key: 'Dégats infligés aux champions', value: 0 })
     this.stats.line2.push({ key: 'Balises de visions posées', value: 0 })
     this.stats.line2.push({
-      key: "Plus d'ennemis tuées en même temps",
+      key: 'Tués simultanés max',
       value: 0
     })
     this.stats.line2.push({ key: 'Or gagné', value: 0 })
@@ -153,6 +153,7 @@ export default {
         (this.stats.line2[3].value / totalGames).toFixed(0)
       )
     })
+    this.stats.line2[1].value = this.multikill(this.stats.line2[1].value)
     for (const el in this.stats.line1) {
       this.stats.line1[el].value = this.formatNumber(this.stats.line1[el].value)
     }
@@ -173,6 +174,22 @@ export default {
       } else {
         this.stats.show1 = this.stats.line1
         this.stats.show2 = this.stats.line2
+      }
+    },
+    multikill: function(n) {
+      switch (n) {
+        case 0:
+          return '0'
+        case 1:
+          return '1'
+        case 2:
+          return 'Double Kill'
+        case 3:
+          return 'Triple Kill'
+        case 4:
+          return 'Quadra Kill'
+        case 5:
+          return 'Penta Kill'
       }
     }
   }
