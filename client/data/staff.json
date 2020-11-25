@@ -9,10 +9,20 @@
                 "value": "Officiel"
             }
         ]
+    },{
+        "name": "Nakfen",
+        "profileIcon": 3614,
+        "link": "https://twitter.com/Nakfen",
+        "tags": [
+            {
+                "class": "is-danger",
+                "value": "Officiel"
+            }
+        ]
     },
     {
         "name": "Vivi",
-        "profileIcon": 4751,
+        "profileIcon": 3152,
         "link": "https://twitter.com/Vividere_",
         "tags": [
             {
@@ -54,7 +64,7 @@
     },{
         "name": "Likrom",
         "profileIcon": 4078,
-        "link": "",
+        "link": "https://twitter.com/Likrom_",
         "tags": [
             {
                 "class": "is-danger",
@@ -188,7 +198,7 @@
     {
         "name": "Anguibok",
         "profileIcon": 4569,
-        "link": "",
+        "link": "https://twitter.com/anguibok",
         "tags": [
             {
                 "class": "is-warning",
@@ -197,9 +207,9 @@
         ]
     },
     {
-        "name": "Iphene",
+        "name": "Lawyers",
         "profileIcon": 3553,
-        "link": "",
+        "link": "https://twitter.com/Bazinga90",
         "tags": [
             {
                 "class": "is-warning",
@@ -210,7 +220,7 @@
     {
         "name": "Maydayyy",
         "profileIcon": 4763,
-        "link": "",
+        "link": "https://twitter.com/Maydayyy_OW",
         "tags": [
             {
                 "class": "is-warning",
@@ -230,9 +240,20 @@
         ]
     },
     {
-        "name": "COCO Manzaro",
-        "profileIcon": 4656,
-        "link": "",
+        "name": "Manzaro",
+        "profileIcon": 985,
+        "link": "https://twitter.com/Manzarow",
+        "tags": [
+            {
+                "class": "is-warning",
+                "value": "Admin"
+            }
+        ]
+    },
+    {
+        "name": "Romiche",
+        "profileIcon": 4665,
+        "link": "https://twitter.com/Romain_Mgmt",
         "tags": [
             {
                 "class": "is-warning",
@@ -242,8 +263,30 @@
     },
     {
         "name": "CAS scRout",
-        "profileIcon": 4380,
-        "link": "",
+        "profileIcon": 3379,
+        "link": "https://twitter.com/CAS_scRout",
+        "tags": [
+            {
+                "class": "is-warning",
+                "value": "Admin"
+            }
+        ]
+    },
+    {
+        "name": "Pier Ho",
+        "profileIcon": 1445,
+        "link": "https://twitter.com/Pier__Ho",
+        "tags": [
+            {
+                "class": "is-warning",
+                "value": "Admin"
+            }
+        ]
+    },
+    {
+        "name": "N3xTy",
+        "profileIcon": 4495,
+        "link": "https://twitter.com/Just_N3xTy",
         "tags": [
             {
                 "class": "is-warning",

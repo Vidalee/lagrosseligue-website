@@ -4,7 +4,7 @@
       <div style="border-radius: 5px;margin-inline: 20px 20px;min-height:400px">
         <br><br>
         <div class="box color-bg">
-          <div v-for="member in shuffle(staff)" :key="member.name" style="min-height: 300px; margin:20px;" class="has-text-centered">
+          <div v-for="member in staff" :key="member.name" style="min-height: 300px; margin:20px;" class="has-text-centered">
             <div v-if="member.link.length != ''">
               <a :href="member.link" target="_blank" class="icon-link">
                 <div class="rounded member-icon-background" style="">
@@ -39,8 +39,11 @@ const staff = require('@/data/staff.json')
 export default {
   data() {
     return {
-      staff: staff
+      staff: []
     }
+  },
+  created: function() {
+    if (process.browser) this.staff = this.shuffle(staff)
   },
   head() {
     return {
@@ -57,7 +60,7 @@ export default {
     }
   },
   methods: {
-    shuffle: array => {
+    shuffle: function(array) {
       let currentIndex = array.length
 
       let temporaryValue
