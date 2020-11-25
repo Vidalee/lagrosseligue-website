@@ -1,11 +1,5 @@
 module.exports = {
-  vue: {
-    config: {
-      productionTip: true,
-      devtools: false
-    }
-  },
-  mode: 'spa',
+  ssr: true,
 
   /*
   ** Headers of the page
@@ -18,7 +12,7 @@ module.exports = {
       {
         hid: 'description',
         name: 'description',
-        content: 'La Grosse Ligue statistics'
+        content: 'La Grosse Ligue Statistiques'
       }
     ],
     script: [
@@ -27,6 +21,9 @@ module.exports = {
       },
       {
         src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'
+      },
+      {
+	src: 'https://www.googletagmanager.com/gtag/js?id=UA-46750429-8'
       }
     ],
     link: [
@@ -52,8 +49,6 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [{ src: '~data/ga.js', mode: 'client' }],
-
   /*
   ** Nuxt.js modules
   */
@@ -62,14 +57,49 @@ module.exports = {
     '@nuxtjs/axios',
     // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy',
-    'lodash'
+    'lodash',
+    //'@nuxtjs/gtm',
+    [
+      'nuxt-cookie-control',
+      {
+        barPosition: 'bottom-right',
+        colors: {
+          barBackground: '#0d0f16',
+          modalButtonBackground: '#0d0f16',
+          checkboxActiveBackground: '#0d0f16',
+          checkboxInactiveBackground: '#ddd',
+          controlButtonIconHoverColor: '#fff',
+          controlButtonHoverBackground: '#0d0f16',
+          controlButtonIconColor: '#0d0f16',
+          controlButtonBackground: '#fff'
+        },
+        text: {
+          barTitle: 'Cookies',
+          barDescription:
+            'Ce site utilise des cookies de site tiers pour améliorer votre experience de navigation. Si vous continuez votre navigation nous considérons que vous les acceptez.',
+          acceptAll: 'Accepter',
+          declineAll: 'Refuser tout',
+          manageCookies: 'Gérer les cookies',
+          unsaved: 'Vos paramètres ne sont pas sauvegardés',
+          close: 'Fermer',
+          save: 'Sauvegarder',
+          necessary: 'Cookies nécessaires',
+          optional: 'Cookies optionnels',
+          functional: 'Cookies fonctionnels',
+          blockedIframe:
+            'Activez les cookies fonctionnels pour voir ce contenu',
+          here: 'ici'
+        }
+      }
+    ]
   ],
   /*
   ** Axios module configuration
   */
   axios: {
+    localBaseURL: 'https://localhost:3001/',
     baseURL: 'https://api.gl.vivide.re/'
-    // See https://github.com/nuxt-community/axios-module#options
+// See https://github.com/nuxt-community/axios-module#options
   },
 
   /*
@@ -90,5 +120,33 @@ module.exports = {
         })
       }
     }
+  },
+  cookies: {
+    necessary: [
+      {
+        name: 'Cookies par défaut',
+        description: 'Utilisés pour se souvenir des préférences de cookies.',
+        cookies: ['cookie_control_consent', 'cookie_control_enabled_cookies']
+      }
+    ],
+optional: [
+            {
+                name: 'Google Analytics',
+                description: 'Google Analytics nous permet d\'analyser le trafic sur notre site, les données récoltées sont anonymisées.',
+                src: 'https://www.googletagmanager.com/gtag/js?id=UA-46750429-8',
+                async: true,
+                cookies: ['_ga', '_gat', '_gid'],
+                accepted: () => {
+			window.dataLayer = window.dataLayer || []
+          		function gtag() {
+		            dataLayer.push(arguments)
+ 		        }
+		        gtag('js', new Date())
+
+		    	gtag('config', 'UA-46750429-8')
+                },
+                declined: () => {}
+        }
+      ]
   }
 }
