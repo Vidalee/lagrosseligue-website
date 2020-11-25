@@ -5,12 +5,20 @@
         <br><br>
         <div class="box color-bg">
           <div v-for="member in shuffle(staff)" :key="member.name" style="min-height: 300px; margin:20px;" class="has-text-centered">
-            <a :href="member.link" target="_blank" class="icon-link">
-              <div class="rounded member-icon-background" style="">
-                <img class="rounded profile-icon icon-link" :src="getIconPath(member.profileIcon)" style="height: 100%; width: 100%; display:block;">
+            <div v-if="member.link.length != ''">
+              <a :href="member.link" target="_blank" class="icon-link">
+                <div class="rounded member-icon-background" style="">
+                  <img class="rounded profile-icon icon-link" :src="getIconPath(member.profileIcon)" style="height: 100%; width: 100%; display:block;">
+                </div>
+              </a>
+            </div>
+            <div v-else>
+              <div class="icon-link">
+                <div class="rounded member-icon-background" style="">
+                  <img class="rounded profile-icon icon-link" :src="getIconPath(member.profileIcon)" style="height: 100%; width: 100%; display:block;">
+                </div>
               </div>
-            </a>
-            
+            </div>
             <h1 class="title is-3 text-color" style="margin-top:20px;margin-left:20px;margin-right:20px;">
               {{ member.name }}
               <br>

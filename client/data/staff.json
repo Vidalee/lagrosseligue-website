@@ -9,7 +9,29 @@
                 "value": "Officiel"
             }
         ]
-    }, {
+    },
+    {
+        "name": "Vivi",
+        "profileIcon": 4751,
+        "link": "https://twitter.com/Vividere_",
+        "tags": [
+            {
+                "class": "is-primary",
+                "value": "Dev"
+            }
+        ]
+    },
+    {
+        "name": "CroissantCat",
+        "profileIcon": 4785,
+        "link": "",
+        "tags": [
+            {
+                "class": "is-danger",
+                "value": "Officiel"
+            }
+        ]
+    },  {
         "name": "Gwendalavir",
         "profileIcon": 938,
         "link": "https://twitter.com/Gwendalaviir",
@@ -30,9 +52,9 @@
             }
         ]
     },{
-        "name": "Twelve",
-        "profileIcon": 3569,
-        "link": "https://bit.ly/3fgv2jl",
+        "name": "Likrom",
+        "profileIcon": 4078,
+        "link": "",
         "tags": [
             {
                 "class": "is-danger",
@@ -45,8 +67,8 @@
         "link": "",
         "tags": [
             {
-                "class": "is-danger",
-                "value": "Officiel"
+                "class": "is-warning",
+                "value": "Admin"
             }
         ]
     },{
@@ -55,8 +77,8 @@
         "link": "https://mobile.twitter.com/Hyotchu",
         "tags": [
             {
-                "class": "is-danger",
-                "value": "Officiel"
+                "class": "is-warning",
+                "value": "Admin"
             }
         ]
     },{
@@ -65,8 +87,8 @@
         "link": "https://twitter.com/Ganna_Luffy",
         "tags": [
             {
-                "class": "is-danger",
-                "value": "Officiel"
+                "class": "is-warning",
+                "value": "Admin"
             }
         ]
     },{
@@ -75,8 +97,8 @@
         "link": "https://twitter.com/Lucas_2033",
         "tags": [
             {
-                "class": "is-danger",
-                "value": "Officiel"
+                "class": "is-warning",
+                "value": "Admin"
             }
         ]
     },{
@@ -85,8 +107,8 @@
         "link": "",
         "tags": [
             {
-                "class": "is-danger",
-                "value": "Officiel"
+                "class": "is-warning",
+                "value": "Admin"
             }
         ]
     },
@@ -96,8 +118,8 @@
         "link": "https://twitter.com/Kronenn_",
         "tags": [
             {
-                "class": "is-danger",
-                "value": "Officiel"
+                "class": "is-warning",
+                "value": "Admin"
             }
         ]
     },
@@ -107,8 +129,8 @@
         "link": "https://twitter.com/LSiouta",
         "tags": [
             {
-                "class": "is-danger",
-                "value": "Officiel"
+                "class": "is-warning",
+                "value": "Admin"
             }
         ]
     },{
@@ -117,8 +139,8 @@
         "link": "https://twitter.com/Pyrasux",
         "tags": [
             {
-                "class": "is-danger",
-                "value": "Officiel"
+                "class": "is-warning",
+                "value": "Admin"
             }
         ]
     },{
@@ -127,8 +149,8 @@
         "link": "https://twitter.com/Gachiiiimaster",
         "tags": [
             {
-                "class": "is-danger",
-                "value": "Officiel"
+                "class": "is-warning",
+                "value": "Admin"
             }
         ]
     },{
@@ -137,8 +159,8 @@
         "link": "https://twitter.com/SilvOW_",
         "tags": [
             {
-                "class": "is-danger",
-                "value": "Officiel"
+                "class": "is-warning",
+                "value": "Admin"
             }
         ]
     },{
@@ -148,7 +170,95 @@
         "tags": [
             {
                 "class": "is-danger",
-                "value": "Officiel"
+                "value": "Admin"
+            }
+        ]
+    },
+    {
+        "name": "Habaro",
+        "profileIcon": 539,
+        "link": "",
+        "tags": [
+            {
+                "class": "is-danger",
+                "value": "Admin"
+            }
+        ]
+    },
+    {
+        "name": "Anguibok",
+        "profileIcon": 4569,
+        "link": "",
+        "tags": [
+            {
+                "class": "is-danger",
+                "value": "Admin"
+            }
+        ]
+    },
+    {
+        "name": "Iphene",
+        "profileIcon": 3553,
+        "link": "",
+        "tags": [
+            {
+                "class": "is-danger",
+                "value": "Admin"
+            }
+        ]
+    },
+    {
+        "name": "HIHI WashedUp PC",
+        "profileIcon": 4656,
+        "link": "",
+        "tags": [
+            {
+                "class": "is-danger",
+                "value": "Admin"
+            }
+        ]
+    },
+    {
+        "name": "Maydayyy",
+        "profileIcon": 4763,
+        "link": "",
+        "tags": [
+            {
+                "class": "is-danger",
+                "value": "Admin"
+            }
+        ]
+    },
+    {
+        "name": "Gøhãn",
+        "profileIcon": 4814,
+        "link": "",
+        "tags": [
+            {
+                "class": "is-danger",
+                "value": "Admin"
+            }
+        ]
+    },
+    {
+        "name": "COCO Manzaro",
+        "profileIcon": 4656,
+        "link": "",
+        "tags": [
+            {
+                "class": "is-danger",
+                "value": "Admin"
+            }
+        ]
+    },
+    {
+        "name": "CAS scRout",
+        "profileIcon": 4380,
+        "link": "",
+        "tags": [
+            {
+                "class": "is-danger",
+                "value": "Admin"
             }
         ]
     }
