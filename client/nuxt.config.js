@@ -4,6 +4,10 @@ module.exports = {
   /*
   ** Headers of the page
   */
+
+  config: {
+    devtools: true
+  },
   head: {
     title: 'La Grosse Ligue',
     meta: [
@@ -18,6 +22,9 @@ module.exports = {
     script: [
       {
         src: '/fa.js'
+      },
+      {
+        src: '/navbar.js'
       },
       {
         src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'
@@ -57,12 +64,12 @@ module.exports = {
     '@nuxtjs/axios',
     // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy',
-    'lodash',
     //'@nuxtjs/gtm',
+    'lodash',
     [
       'nuxt-cookie-control',
       {
-        barPosition: 'bottom-right',
+        // barPosition: 'bottom-right',
         colors: {
           barBackground: '#0d0f16',
           modalButtonBackground: '#0d0f16',
@@ -76,7 +83,7 @@ module.exports = {
         text: {
           barTitle: 'Cookies',
           barDescription:
-            'Ce site utilise des cookies de site tiers pour améliorer votre experience de navigation. Si vous continuez votre navigation nous considérons que vous les acceptez.',
+            'Notre site utilise des cookies de site tiers pour améliorer votre experience de navigation. Si vous continuez votre navigation nous considérons que vous les acceptez.',
           acceptAll: 'Accepter',
           declineAll: 'Refuser tout',
           manageCookies: 'Gérer les cookies',
@@ -99,7 +106,6 @@ module.exports = {
   axios: {
     localBaseURL: 'https://localhost:3001/',
     baseURL: 'https://api.gl.vivide.re/'
-// See https://github.com/nuxt-community/axios-module#options
   },
 
   /*
@@ -129,24 +135,29 @@ module.exports = {
         cookies: ['cookie_control_consent', 'cookie_control_enabled_cookies']
       }
     ],
-optional: [
-            {
-                name: 'Google Analytics',
-                description: 'Google Analytics nous permet d\'analyser le trafic sur notre site, les données récoltées sont anonymisées.',
-                src: 'https://www.googletagmanager.com/gtag/js?id=UA-46750429-8',
-                async: true,
-                cookies: ['_ga', '_gat', '_gid'],
-                accepted: () => {
-			window.dataLayer = window.dataLayer || []
-          		function gtag() {
-		            dataLayer.push(arguments)
- 		        }
-		        gtag('js', new Date())
+    optional: [
+      {
+        name: 'Google Analytics',
+        identifier: 'ga',
+        // else
+        description:
+          "Google Analytics nous permet d'analyser le trafic sur notre site, les données récoltées sont anonymisées.",
 
-		    	gtag('config', 'UA-46750429-8')
-                },
-                declined: () => {}
-        }
-      ]
+        initialState: true,
+        src: 'https://www.googletagmanager.com/gtag/js?id=UA-46750429-8',
+        async: true,
+        cookies: ['_ga', '_gat', '_gid'],
+        accepted: () => {
+          window.dataLayer = window.dataLayer || []
+          function gtag() {
+            dataLayer.push(arguments)
+          }
+          gtag('js', new Date())
+
+          gtag('config', 'UA-46750429-8')
+        },
+        declined: () => {}
+      }
+    ]
   }
 }
