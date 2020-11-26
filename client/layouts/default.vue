@@ -1,6 +1,10 @@
 <template>
   <div :data-theme="darkTheme">
     <div class="background" />
+    <br v-if="filtering"><br v-if="filtering">
+    <b-notification v-if="filtering" type="is-danger" aria-close-label="Close notification">
+      Je suis actuellement en train de filtrer tous les matchs donc il faut pas s'étonner des résultats actuels.
+    </b-notification>
     <NavBar :darktheme="darkTheme === 'dark'" />
     <section class="main-content">
       <nuxt />
@@ -19,11 +23,12 @@ export default {
   data: () => {
     return {
       show: false,
+      filtering: process.env.filtering,
       darkTheme: process.browser
         ? localStorage.getItem('theme')
           ? localStorage.getItem('theme')
-          : 'light'
-        : 'light'
+          : 'dark'
+        : 'dark'
     }
   },
   mounted: function() {
