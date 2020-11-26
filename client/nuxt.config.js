@@ -16,7 +16,7 @@ module.exports = {
       {
         hid: 'description',
         name: 'description',
-        content: 'La Grosse Ligue statistics'
+        content: 'La Grosse Ligue Statistiques'
       }
     ],
     script: [
@@ -28,6 +28,9 @@ module.exports = {
       },
       {
         src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'
+      },
+      {
+	src: 'https://www.googletagmanager.com/gtag/js?id=UA-46750429-8'
       }
     ],
     link: [
@@ -53,7 +56,6 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-
   /*
   ** Nuxt.js modules
   */
@@ -102,8 +104,8 @@ module.exports = {
   ** Axios module configuration
   */
   axios: {
-    baseURL: 'http://localhost:3001/'
-    // See https://github.com/nuxt-community/axios-module#options
+    localBaseURL: 'https://localhost:3001/',
+    baseURL: 'https://api.gl.vivide.re/'
   },
   env: {
     filtering: true
