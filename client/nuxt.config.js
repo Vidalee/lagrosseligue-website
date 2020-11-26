@@ -105,6 +105,9 @@ module.exports = {
     baseURL: 'http://localhost:3001/'
     // See https://github.com/nuxt-community/axios-module#options
   },
+  env: {
+    filtering: true
+  },
 
   /*
   ** Build configuration
