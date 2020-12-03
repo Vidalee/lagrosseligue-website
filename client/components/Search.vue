@@ -79,6 +79,16 @@ export default {
         this.data = []
         return
       }
+
+      if (name.length < 3) {
+        this.$toast.open({
+          message: 'Veuillez écrire un mot de 3 lettres au minimum !',
+          type: 'is-danger',
+          queue: false
+        })
+        return
+      }
+
       this.isFetching = true
       this.$axios
         .get(this.$axios.defaults.baseURL + 'search/' + name)
