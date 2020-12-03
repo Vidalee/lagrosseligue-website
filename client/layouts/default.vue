@@ -106,7 +106,7 @@ html {
 }
 
 .background {
-  background-image: url('../static/bg.jpg');
+  background-image: url('../static/bg.webp');
 
   /* Full height */
 
