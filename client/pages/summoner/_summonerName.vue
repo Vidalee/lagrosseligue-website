@@ -34,7 +34,7 @@ export default {
     MatchHistory,
     Statistics
   },
-  asyncData({ app, params }) {
+  asyncData({ app, params, $router }) {
     return app.$axios
       .get(
         app.$axios.defaults.baseURL +
@@ -55,6 +55,9 @@ export default {
           .reverse()
 
         return { summoner: res.data }
+      })
+      .catch(error => {
+        throw { statusCode: 404, message: "L'invocateur n'a pas été trouvé" }
       })
   },
   methods: {

@@ -29,6 +29,9 @@ export default {
       .then(res => {
         return { team: res.data }
       })
+      .catch(error => {
+        throw { statusCode: 404, message: "L'équipe n'a pas été trouvée" }
+      })
   },
   head() {
     return {
