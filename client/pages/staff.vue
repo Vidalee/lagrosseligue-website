@@ -47,7 +47,7 @@ export default {
   },
   head() {
     return {
-      title: 'La Grosse Ligue - Mentions Légales',
+      title: 'La Grosse Ligue - Staff',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
