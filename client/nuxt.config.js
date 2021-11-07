@@ -104,11 +104,11 @@ module.exports = {
   ** Axios module configuration
   */
   axios: {
-    localBaseURL: 'https://localhost:3001/',
-    baseURL: 'https://api.gl.vivide.re/'
+    baseURL: 'http://localhost:3001/',
+    baseURL_: 'https://api.gl.vivide.re/'
   },
   env: {
-    filtering: true
+    filtering: false
   },
 
   /*

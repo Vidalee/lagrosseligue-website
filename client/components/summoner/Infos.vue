@@ -2,13 +2,13 @@
   <div class="tile is-parent is-vertical">
     <article class="tile is-child notification infos">
       <div class="rounded profile-icon-background color-bg">
-        <img class="rounded profile-icon" :src="getIconPath()">
+        <img class="rounded profile-icon" :src="getIconPath()" />
       </div>
       <div class="profile-banner under">
-        <div style="margin-bottom: 120px;" /> 
+        <div style="margin-bottom: 120px" />
         <h1 class="title is-3">
           {{ json.summonerName }}
-          <br>
+          <br />
           <span class="tag is-primary">
             {{ json.palier }}
           </span>
@@ -18,18 +18,26 @@
           <span v-if="json.soloRank != ''" class="tag is-info">
             {{ json.soloRank }}
           </span>
+          <span v-if="json.flag === 0" class="tag is-danger">
+            Main
+          </span>
         </h1>
-        <div style="margin:20px;display:inline-block;vertical-align:middle;">
+        <div
+          style="margin: 20px; display: inline-block; vertical-align: middle"
+        >
           Équipe actuelle :
-          <router-link :to="'/team/' + json.participant.name" style="display:inline-block;vertical-align:middle;">
+          <router-link
+            :to="'/team/' + json.team"
+            style="display: inline-block; vertical-align: middle"
+          >
             <button class="button is-primary">
-              {{ json.participant.name }}
-            </button>
-          </router-link><br><br>
+              {{ json.team }}
+            </button> </router-link
+          ><br /><br />
         </div>
       </div>
       <!--pls help :(-->
-      <br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     </article>
   </div>
 </template>
@@ -39,17 +47,17 @@ export default {
   props: {
     json: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   methods: {
-    getIconPath: function() {
+    getIconPath: function () {
       const str =
         'https://cdn.communitydragon.org/latest/profile-icon/' +
-        this.json.profileIcon
+        this.json.profileIconId
       return str
-    }
-  }
+    },
+  },
 }
 </script>
 

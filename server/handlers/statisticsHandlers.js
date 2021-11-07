@@ -5,7 +5,7 @@ module.exports = {
   getStatistics: function(request, h) {
     return new Promise(resolve => {
       main.r
-        .db("GL5")
+        .db("GL6")
         .table("statistics")
         .run()
         .then(function(response) {

@@ -1,8 +1,13 @@
 <template>
   <section class="section">
-    <br v-if="isBoulet(summoner.participant.name)">
-    <b-notification v-if="isBoulet(summoner.participant.name)" type="is-danger" aria-close-label="Close notification">
-      Un des matchs de ce joueur ne s'est pas fait avec le bon code de tournoi, faussant les informations.
+    <br v-if="isBoulet(summoner.team)" />
+    <b-notification
+      v-if="isBoulet(summoner.team)"
+      type="is-danger"
+      aria-close-label="Close notification"
+    >
+      Un des matchs de ce joueur ne s'est pas fait avec le bon code de tournoi,
+      faussant les informations.
     </b-notification>
     <div class="tile is-ancestor">
       <div class="tile is-vertical is-8">
@@ -32,7 +37,7 @@ export default {
     Infos,
     Champions,
     MatchHistory,
-    Statistics
+    Statistics,
   },
   asyncData({ app, params, $router }) {
     return app.$axios
@@ -41,29 +46,35 @@ export default {
           'summoner/' +
           encodeURI(params.summonerName)
       )
-      .then(res => {
-        res.data.games.forEach(game => {
-          game.stats.items = []
+      .then((res) => {
+        res.data.matches.forEach((match) => {
+          match.items = []
           // Courtesy of Maxime
           for (let i = 0; i < 6; i++) {
-            game.stats.items.push(game.stats[`item${i}`])
+            match.items.push(match[`item${i}`])
           }
         })
 
-        res.data.games = res.data.games
-          .sort(game => game.gameCreation)
+        res.data.matches = res.data.matches
+          .sort((match) => match.gameCreation)
           .reverse()
 
+        const soloRank = res.data.rank.filter((r) => r.queueType === 'RANKED_SOLO_5x5')
+        let rankString = "UNRANKED";
+        if (soloRank.length > 0)
+          rankString = soloRank[0].tier + ' ' + soloRank[0].rank
+        res.data.soloRank = rankString;
         return { summoner: res.data }
       })
-      .catch(error => {
+      .catch((e) => {
+        console.log(e)
         throw { statusCode: 404, message: "L'invocateur n'a pas été trouvé" }
       })
   },
   methods: {
-    isBoulet: function(name) {
+    isBoulet: function (name) {
       return boulets.includes(name)
-    }
+    },
   },
   head() {
     return {
@@ -76,13 +87,13 @@ export default {
           name: 'description',
           content: `Informations sur le joueur ${this.summoner.summonerName} ${
             this.summoner.soloRank.length ? ' | ' + this.summoner.soloRank : ''
-          } | Équipe ${this.summoner.participant.name} | Palier ${
+          } | Équipe ${this.summoner.team} | Palier ${
             this.summoner.palier
-          } | Région ${this.summoner.region}`
-        }
-      ]
+          } | Région ${this.summoner.region}`,
+        },
+      ],
     }
-  }
+  },
 }
 </script>
 

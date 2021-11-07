@@ -94,23 +94,17 @@ export default {
     this.stats.line2.push({ key: 'Or gagné', value: 0 })
     this.stats.line2.push({ key: 'Dégats reçus', value: 0 })
 
-    this.json.games.forEach(game => {
+    this.json.matches.forEach(game => {
       totalGames += 1
-      if (game.stats.win) this.stats.line1[0].value += 1
-      this.stats.line1[1].value += game.stats.kills + game.stats.assists
-      this.stats.line1[2].value += game.stats.totalMinionsKilled
-      this.stats.line1[3].value +=
-        game.stats.magicDamageDealtToChampions +
-        game.stats.physicalDamageDealtToChampions +
-        game.stats.trueDamageDealtToChampions
-      this.stats.line2[0].value += game.stats.wardsPlaced
-      if (game.stats.largestMultiKill > this.stats.line2[1].value)
-        this.stats.line2[1].value = game.stats.largestMultiKill
-      this.stats.line2[2].value += game.stats.goldEarned
-      this.stats.line2[3].value +=
-        game.stats.magicalDamageTaken +
-        game.stats.physicalDamageTaken +
-        game.stats.trueDamageTaken
+      if (game.win) this.stats.line1[0].value += 1
+      this.stats.line1[1].value += game.kills + game.assists
+      this.stats.line1[2].value += game.totalMinionsKilled
+      this.stats.line1[3].value += game.totalDamageDealtToChampions
+      this.stats.line2[0].value += game.wardsPlaced
+      if (game.largestMultiKill > this.stats.line2[1].value)
+        this.stats.line2[1].value = game.largestMultiKill
+      this.stats.line2[2].value += game.goldEarned
+      this.stats.line2[3].value += game.totalDamageTaken
     })
     this.stats.line1[0].value = Math.round(
       (this.stats.line1[0].value / totalGames) * 100

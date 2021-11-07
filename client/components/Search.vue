@@ -21,7 +21,7 @@
           <template slot-scope="props">
             <div class="media">
               <div class="media-left">
-                <img width="32" :src="`https://cdn.communitydragon.org/latest/profile-icon/${props.option.profileIcon}`">
+                <img width="32" :src="`https://cdn.communitydragon.org/latest/profile-icon/${props.option.profileIconId}`">
               </div>
               <div v-if="props.option.summonerName" class="media-content">
                 <span class="tag is-primary">

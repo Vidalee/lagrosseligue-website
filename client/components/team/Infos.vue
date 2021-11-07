@@ -20,7 +20,7 @@
             {{ json.region }}
           </span>
         </h1>
-        Établissement: {{ json.custom_fields.universite }}
+        Établissement: soontm{{ json.custom_fields.universite }}
         <div v-if="json.custom_fields.coach">
           Coach: {{ json.custom_fields.coach }}
         </div>
@@ -50,7 +50,7 @@ export default {
     getIconPath: function() {
       const str =
         'https://cdn.communitydragon.org/latest/profile-icon/' +
-        this.json.profileIcon
+        this.json.profileIconId
       return str
     },
     isBoulet: function(name) {
