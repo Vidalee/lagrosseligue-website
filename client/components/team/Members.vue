@@ -3,7 +3,7 @@
     <div v-for="member in json" :key="member.summonerName" class="column has-text-centered" style="height:290px;">
       <router-link :to="'/summoner/' + member.summonerName" class="icon-link">
         <div class="rounded member-icon-background" style="height:0px">
-          <img class="rounded profile-icon icon-link" :src="getIconPath(member.profileIcon)">
+          <img class="rounded profile-icon icon-link" :src="getIconPath(member.profileIconId)">
         </div>
       </router-link>
       <h1 class="title is-3 text-color" style="margin-top:110px;margin-left:20px;margin-right:20px;">
@@ -11,6 +11,9 @@
         <br>
         <span v-if="member.soloRank != ''" class="tag is-info">
           {{ member.soloRank }}
+        </span>
+        <span v-if="member.flag === 0" class="tag is-danger">
+          Main
         </span>
       </h1>
     </div>

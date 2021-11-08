@@ -113,7 +113,7 @@
                 <br><br><br><br>
                 <router-link :to="'/summoner/' + stats.kda.summonerName" class="icon-link">
                   <div class="rounded member-icon-background" style="height:0px">
-                    <img class="rounded profile-icon icon-link" :src="getIconPath(stats.kda.profileIcon)">
+                    <img class="rounded profile-icon icon-link" :src="getIconPath(stats.kda.profileIconId)">
                   </div>
                 </router-link>
                 <h1 class="title is-3 text-color" style="margin-top:110px;margin-left:20px;margin-right:20px;">
@@ -135,7 +135,7 @@
                 <br><br><br><br>
                 <router-link :to="'/summoner/' + stats.cs.summonerName" class="icon-link">
                   <div class="rounded member-icon-background" style="height:0px">
-                    <img class="rounded profile-icon icon-link" :src="getIconPath(stats.cs.profileIcon)">
+                    <img class="rounded profile-icon icon-link" :src="getIconPath(stats.cs.profileIconId)">
                   </div>
                 </router-link>
                 <h1 class="title is-3 text-color" style="margin-top:110px;margin-left:20px;margin-right:20px;">
@@ -157,7 +157,7 @@
                 <br><br><br><br>
                 <router-link :to="'/summoner/' + stats.visionScore.summonerName" class="icon-link">
                   <div class="rounded member-icon-background" style="height:0px">
-                    <img class="rounded profile-icon icon-link" :src="getIconPath(stats.visionScore.profileIcon)">
+                    <img class="rounded profile-icon icon-link" :src="getIconPath(stats.visionScore.profileIconId)">
                   </div>
                 </router-link>
                 <h1 class="title is-3 text-color" style="margin-top:110px;margin-left:20px;margin-right:20px;">
@@ -179,7 +179,7 @@
                 <br><br><br><br>
                 <router-link :to="'/summoner/' + stats.alive.summonerName" class="icon-link">
                   <div class="rounded member-icon-background" style="height:0px">
-                    <img class="rounded profile-icon icon-link" :src="getIconPath(stats.alive.profileIcon)">
+                    <img class="rounded profile-icon icon-link" :src="getIconPath(stats.alive.profileIconId)">
                   </div>
                 </router-link>
                 <h1 class="title is-3 text-color" style="margin-top:110px;margin-left:20px;margin-right:20px;">
@@ -225,9 +225,9 @@ export default {
       })
   },
   methods: {
-    getIconPath: function(profileIconId) {
+    getIconPath: function(profileIconIdId) {
       const str =
-        'https://cdn.communitydragon.org/latest/profile-icon/' + profileIconId
+        'https://cdn.communitydragon.org/latest/profile-icon/' + profileIconIdId
       return str
     },
     getChampionName: function(championId) {

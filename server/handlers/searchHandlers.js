@@ -6,16 +6,16 @@ module.exports = {
   getSearch: function (request, h) {
     return new Promise(resolve => {
       main.r
-        .db("GL5")
+        .db("GL6")
         .table("teams")
-        .filter(function (player) {
-          return player("name").match(`(?i)^${request.params.name}.*`)
+        .filter(function (team) {
+          return team("name").match(`(?i)^${request.params.name}.*`)
         })
         .run()
         .then(function (response) {
           main.r
-            .db("GL5")
-            .table("playersFiltered")
+            .db("GL6")
+            .table("players")
             .filter(function (player) {
               return player("summonerName").match(`(?i)^${request.params.name}.*`)
             })

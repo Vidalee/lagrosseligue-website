@@ -5,12 +5,12 @@ module.exports = {
   getTeam: function(request, h) {
     return new Promise(resolve => {
       main.r
-        .db("GL5")
+        .db("GL6")
         .table("teams")
         .filter({ name: request.params.name })
         .run()
         .then(function(response) {
-          console.log(response);
+          //console.log(response);
           if (response.length != 0) {
             console.log("Team successfully returned");
             resolve(response[0]);

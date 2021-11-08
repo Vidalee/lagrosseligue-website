@@ -5,7 +5,7 @@
         Historique de parties
       </p>
       <div class="content" style="max-height:700px;overflow:auto;">
-        <article v-for="game in json.games" :key="game.stats.goldEarned" class="media clean" :style="'background-color: ' + (game.stats.win ? 'hsl(171, 100%, 41%)' : 'hsl(348, 100%, 61%);')">
+        <article v-for="game in json.matches" :key="game.goldEarned" class="media clean" :style="'background-color: ' + (game.win ? 'hsl(171, 100%, 41%)' : 'hsl(348, 100%, 61%);')">
           <figure class="media-left is-danger has-text-centered figure-equi" style="margin:0px;height:84px;width:84px;">
             <img
               :src="'https://cdn.communitydragon.org/latest/champion/' + game.championId + '/square'"
@@ -22,20 +22,20 @@
               <div>
                 <div>
                   <img
-                    v-for="item in game.stats.items"
+                    v-for="item in game.items"
                     :key="item"
                     :src="getItemPath(item)"
                     class="image is-32x32"
                     style="margin-right:2px;display:inline;border-radius:10px;background-color:grey;"
                   >
-                  <button class="button is-primary" @click="open(game.gameId)">
+                  <button class="button is-primary" @click="open(game.matchId)">
                     Voir les détails du match
                   </button>
                 </div>
                 <strong>
-                  KDA: {{ ((game.stats.kills+game.stats.assists)/(game.stats.deaths == 0 ? 1 : game.stats.deaths)).toFixed(1) }}  
+                  KDA: {{ ((game.kills+game.assists)/(game.deaths == 0 ? 1 : game.deaths)).toFixed(1) }}  
                 </strong>
-                {{ game.stats.kills }}/{{ game.stats.deaths }}/{{ game.stats.assists }}
+                {{ game.kills }}/{{ game.deaths }}/{{ game.assists }}
               </div>
             </div>
           </div>
@@ -65,8 +65,8 @@ export default {
     },
     open: function(id) {
       window.open(
-        'https://matchhistory.euw.leagueoflegends.com/en/#match-details/EUW1/' +
-          id,
+        'https://www.leagueofgraphs.com/fr/match/euw/' +
+          id.substring(5),
         '_blank'
       )
     },

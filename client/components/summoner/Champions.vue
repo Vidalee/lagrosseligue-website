@@ -74,33 +74,33 @@ export default {
   },
   created: function() {
     let champions = {}
-    this.json.games.forEach(game => {
+    this.json.matches.forEach(game => {
       if (champions[game.championId]) {
         champions[game.championId].count++
         champions[game.championId].k =
           (champions[game.championId].k *
             (champions[game.championId].count - 1) +
-            game.stats.kills) /
+            game.kills) /
           champions[game.championId].count
         champions[game.championId].d =
           (champions[game.championId].d *
             (champions[game.championId].count - 1) +
-            game.stats.deaths) /
+            game.deaths) /
           champions[game.championId].count
         champions[game.championId].a =
           (champions[game.championId].a *
             (champions[game.championId].count - 1) +
-            game.stats.assists) /
+            game.assists) /
           champions[game.championId].count
-        if (game.stats.win) champions[game.championId].wins++
+        if (game.win) champions[game.championId].wins++
       } else {
         champions[game.championId] = {
           championId: game.championId,
           count: 1,
-          k: game.stats.kills,
-          d: game.stats.deaths,
-          a: game.stats.assists,
-          wins: game.stats.win ? 1 : 0
+          k: game.kills,
+          d: game.deaths,
+          a: game.assists,
+          wins: game.win ? 1 : 0
         }
         for (const championName in championInfo.data) {
           if (!championInfo.data.hasOwnProperty(championName)) continue
