@@ -18,7 +18,7 @@
           <span v-if="json.soloRank != ''" class="tag is-info">
             {{ json.soloRank }}
           </span>
-          <span v-if="json.flag === 0" class="tag is-danger">
+          <span v-if="json.flag === 1" class="tag is-danger">
             Main
           </span>
         </h1>

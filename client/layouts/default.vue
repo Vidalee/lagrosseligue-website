@@ -31,7 +31,7 @@ export default {
         : 'dark'
     }
   },
-  mounted: function() {
+  updated: function() {
     this.$el.setAttribute('data-theme', localStorage.getItem('theme'))
   }
 }

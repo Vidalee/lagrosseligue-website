@@ -69,20 +69,28 @@ async function handleGame(matchId) {
         return;
     }
 
-    let glBlue = glRed = undefined;
+    let teamBlue = players.find(player => player.summonerId === playerBlue.summonerId).team;
+    let teamRed = players.find(player => player.summonerId === playerRed.summonerId).team;
+    
+    const gl = {
+        blue: teamBlue,
+        red: teamRed,
+        win: playerBlue.win ? teamBlue : teamRed
+    }
+
     for (let participant of game.info.participants) {
         let player = players.find(player => player.summonerId === participant.summonerId);
         if (player === undefined) {
-            newPlayerFlagged(participant.summonerId, participant.teamId === 100 ? playerBlue : playerRed);
+            await newPlayerFlagged(participant.summonerId, participant.teamId === 100 ? playerBlue : playerRed);
             player = players.find(player => player.summonerId === participant.summonerId);
             if (player === undefined) {
                 console.log("Player not found", participant.summonerName, game.metadata.matchId);
                 continue;
             }
         }
-        if(player.oldNames === undefined){
+        if(player.oldNames === undefined)
             player.oldNames = [];
-        }
+        
         if(player.summonerName !== participant.summonerName && !player.oldNames.includes(participant.summonerName))
             player.oldNames.push(participant.summonerName);
 
@@ -110,16 +118,11 @@ async function handleGame(matchId) {
             gameType: game.info.gameType,
             gameVersion: game.info.gameVersion,
             mapId: game.info.mapId,
-            matchId: game.metadata.matchId
+            matchId: game.metadata.matchId,
+            opponentTeam: participant.teamId === 100 ? teamRed : teamBlue
         })
         player.matches.push(participant);
         player.matchesIds.push(matchId);
-    }
-
-    const gl = {
-        blue: glBlue.team,
-        red: glRed.team,
-        win: playerBlue.win ? glBlue.team : glRed.team
     }
     
     game.gl = gl;
@@ -136,7 +139,7 @@ async function newPlayerFlagged(summonerId, cpy){
         rankString = soloRank[0].tier + " " + soloRank[0].rank;
     summoner.rank = rank;
     summoner.soloRank = rankString;
-    summoner.flag = 0;
+    summoner.flag = 1;
     summoner.team = cpy.team;
     summoner.summonerId = summoner.id;
     delete summoner.id;

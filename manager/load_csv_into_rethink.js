@@ -38,12 +38,16 @@ async function main() {
                 const soloRank = rank.filter(r => r.queueType === "RANKED_SOLO_5x5");
                 if (soloRank.length > 0)
                     rankString = soloRank[0].tier + " " + soloRank[0].rank;
-                players.push({ accountId: summoner.accountId, summonerId: summoner.id, summonerName: summoner.name, profileIconId: summoner.profileIconId, soloRank: rankString });
+                players.push({ flag: 0, accountId: summoner.accountId, summonerId: summoner.id, summonerName: summoner.name, profileIconId: summoner.profileIconId, soloRank: rankString });
                 summoner.rank = soloRank;
                 summoner.soloRank = rankString;
-                summoner.flag = 1;
+                summoner.flag = 0;
                 summoner.region = split[2];
                 summoner.team = split[1];
+                summoner.summonerId = summoner.id;
+                summoner.summonerName = summoner.name;
+                delete summoner.id;
+                delete summoner.name;
                 data.push(summoner);
 
             } catch (e) {
