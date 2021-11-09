@@ -95,10 +95,8 @@ function c() {
 
 async function d() {
     for (let player of players) {
-        if (!player.rank) {
-            console.log("missing here")
-            player.rank = await getRank(player.summonerId);
-        }
+       player.matches = [];
+       player.matchesIds = [];
     }
     fs.writeFileSync("./players.json", JSON.stringify(players, null, 4))
 
