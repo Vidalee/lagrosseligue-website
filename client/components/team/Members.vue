@@ -12,7 +12,7 @@
         <span v-if="member.soloRank != ''" class="tag is-info">
           {{ member.soloRank }}
         </span>
-        <span v-if="member.flag === 0" class="tag is-danger">
+        <span v-if="member.flag === 1" class="tag is-danger">
           Main
         </span>
       </h1>

@@ -20,9 +20,11 @@ async function main() {
     for (let i = 1; i < lines.length; i++) {
         const line = lines[i];
         console.log(`${i}/${lines.length}`);
-        if (line.includes("N/A") || line.includes(",,,,,,,,,,"))
+        if (line.includes(",,,,,,,,,,") || line.includes(",,,,#N/A,,,,,,"))
             continue;
         const split = line.split(',');
+        if (split[2] === "#N/A")
+            split[2] = "Inconnue"
         const players = [];
         const errors = [];
         for (let j = 3; j < split.length; j++) {
@@ -36,9 +38,16 @@ async function main() {
                 const soloRank = rank.filter(r => r.queueType === "RANKED_SOLO_5x5");
                 if (soloRank.length > 0)
                     rankString = soloRank[0].tier + " " + soloRank[0].rank;
-                players.push({ accountId: summoner.accountId, summonerId: summoner.id, summonerName: summoner.name, profileIconId: summoner.profileIconId, soloRank: rankString });
-                summoner.rank = rank;
-                summoner.soloRank = rank;
+                players.push({ flag: 0, accountId: summoner.accountId, summonerId: summoner.id, summonerName: summoner.name, profileIconId: summoner.profileIconId, soloRank: rankString });
+                summoner.rank = soloRank;
+                summoner.soloRank = rankString;
+                summoner.flag = 0;
+                summoner.region = split[2];
+                summoner.team = split[1];
+                summoner.summonerId = summoner.id;
+                summoner.summonerName = summoner.name;
+                delete summoner.id;
+                delete summoner.name;
                 data.push(summoner);
 
             } catch (e) {
@@ -61,13 +70,13 @@ async function main() {
 
 main();
 
-function getSummoner(name){
+function getSummoner(name) {
     return galeforce.lol.summoner().name(name)
-    .region(galeforce.region.lol.EUROPE_WEST)
-    .exec();
+        .region(galeforce.region.lol.EUROPE_WEST)
+        .exec();
 }
-function getRank(id){
+function getRank(id) {
     return galeforce.lol.league.entries().summonerId(id)
-    .region(galeforce.region.lol.EUROPE_WEST)
-    .exec();
+        .region(galeforce.region.lol.EUROPE_WEST)
+        .exec();
 }

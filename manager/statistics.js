@@ -39,6 +39,8 @@ async function generate_statistics() {
         console.log("euh3");
 
         for (let player of response) {
+            if (!player.matches)
+                continue;
             let kills = 0;
             let deaths = 0;
             let assists = 0;
@@ -118,7 +120,7 @@ async function generate_statistics() {
    stats.totalGames = require("./matches.json").length;
     console.log(zz);
     await r.db('GL6').table('statistics').delete().run();
-    await r.db('GL6').table('statistics').insert(stats).run().then(()=>console.log("done"));
+    await r.db('GL6').table('statistics').insert(stats).run().then(() => console.log("done"));
 }
 
 generate_statistics();

@@ -28,7 +28,7 @@
                     class="image is-32x32"
                     style="margin-right:2px;display:inline;border-radius:10px;background-color:grey;"
                   >
-                  <button class="button is-primary" @click="open(game.matchId)">
+                  <button class="button is-primary" @click="open(game.matchId, game.participantId)">
                     Voir les détails du match
                   </button>
                 </div>
@@ -59,14 +59,14 @@ export default {
     date: function(timestamp) {
       const date = new Date(timestamp)
       const day = '0' + date.getDay()
-      const month = '0' + date.getMonth()
+      const month = '0' + (date.getMonth() + 1)
       const year = date.getFullYear()
       return day.substring(-2) + '/' + month.substr(-2) + '/' + year
     },
-    open: function(id) {
+    open: function(id, participantId) {
       window.open(
         'https://www.leagueofgraphs.com/fr/match/euw/' +
-          id.substring(5),
+          id.substring(5) + "#participant" + participantId,
         '_blank'
       )
     },
