@@ -117,9 +117,7 @@ async function generate_statistics() {
 
     });
     let zz = 0;
-    await r.db('GL6').table('matches').count().run().then(response => {
-        stats.totalGames = response;
-    });
+   stats.totalGames = require("./matches.json").length;
     console.log(zz);
     await r.db('GL6').table('statistics').delete().run();
     await r.db('GL6').table('statistics').insert(stats).run().then(() => console.log("done"));

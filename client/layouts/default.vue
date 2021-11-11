@@ -3,7 +3,7 @@
     <div class="background" />
     <br v-if="filtering"><br v-if="filtering">
     <b-notification v-if="filtering" type="is-danger" aria-close-label="Close notification">
-      Je suis actuellement en train de filtrer tous les matchs donc il faut pas s'étonner des résultats actuels.
+      Je suis au train de développer de nouveaux outils pour récupérer les parties étant donné que ce split de la Grosse Ligue n'est plus sous Toornament. C'est pour cette raison que certains équipes ou historiques de parties peuvent paraître un peu bizarre. - Vivi
     </b-notification>
     <NavBar :darktheme="darkTheme === 'dark'" />
     <section class="main-content">
