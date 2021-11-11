@@ -20,7 +20,8 @@
                 "value": "Dev"
             }
         ]
-    },  {
+    },
+    {
         "name": "Gwendalavir",
         "profileIcon": 938,
         "link": "https://twitter.com/Gwendalaviir",
@@ -28,9 +29,14 @@
             {
                 "class": "is-danger",
                 "value": "Officiel"
+            },
+            {
+                "class": "is-info",
+                "value": "Vitre"
             }
         ]
-    },{
+    },
+    {
         "name": "Twelve",
         "profileIcon": 29,
         "link": "https://www.theraleighregister.com/ouicestchezdouze.html",
@@ -38,12 +44,14 @@
             {
                 "class": "is-danger",
                 "value": "Officiel"
-            },{
+            },
+            {
                 "class": "is-info",
                 "value": "12"
             }
         ]
-    },{
+    },
+    {
         "name": "Likrom",
         "profileIcon": 5145,
         "link": "https://twitter.com/Likrom_",
@@ -53,7 +61,8 @@
                 "value": "Officiel"
             }
         ]
-    },{
+    },
+    {
         "name": "Nigirith",
         "profileIcon": 5023,
         "link": "",
@@ -63,7 +72,8 @@
                 "value": "Officiel"
             }
         ]
-    },{
+    },
+    {
         "name": "GannaLuffy",
         "profileIcon": 4793,
         "link": "https://twitter.com/Ganna_Luffy",
@@ -73,7 +83,8 @@
                 "value": "Admin"
             }
         ]
-    },{
+    },
+    {
         "name": "Mags",
         "profileIcon": 3882,
         "link": "https://twitter.com/MagsColeus",
@@ -105,7 +116,8 @@
                 "value": "Admin"
             }
         ]
-    },{
+    },
+    {
         "name": "Pyra",
         "profileIcon": 3207,
         "link": "https://twitter.com/Pyrasux",
@@ -115,7 +127,8 @@
                 "value": "Admin"
             }
         ]
-    },{
+    },
+    {
         "name": "Silv",
         "profileIcon": 3478,
         "link": "https://twitter.com/SilvOW_",
@@ -125,7 +138,8 @@
                 "value": "Admin"
             }
         ]
-    },{
+    },
+    {
         "name": "Gøhãn",
         "profileIcon": 663,
         "link": "https://twitter.com/_Goohaan_",
@@ -135,7 +149,8 @@
                 "value": "Admin"
             }
         ]
-    },{
+    },
+    {
         "name": "ElBlackytos",
         "profileIcon": 4880,
         "link": "https://twitter.com/elblackytos",
