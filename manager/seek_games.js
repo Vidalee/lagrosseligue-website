@@ -27,6 +27,10 @@ async function main() {
             .exec()
         //console.log(history);
         for (let matchId of history) {
+            if(matchesIds.includes(matchId)){
+                console.log("Already added", matchId);
+                continue;
+            }
             await handleGame(matchId);
         }
         i++;
@@ -38,7 +42,7 @@ async function main() {
     fs.writeFileSync('teams.json', JSON.stringify(teams, null, 4));
 }
 main();
-
+console.log(matchesIds)
 async function handleGame(matchId) {
     if (matchesIds.includes(matchId))
         return;
@@ -143,6 +147,8 @@ async function newPlayerFlagged(summonerId, cpy){
     summoner.team = cpy.team;
     summoner.summonerId = summoner.id;
     delete summoner.id;
+    summoner.summonerName = summoner.name;
+    delete summoner.name;
     summoner.region = cpy.region;
     const team = teams.find(team => team.id === summoner.team);
     if (team === undefined) {

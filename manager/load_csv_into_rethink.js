@@ -46,6 +46,8 @@ async function main() {
                 summoner.team = split[1];
                 summoner.summonerId = summoner.id;
                 summoner.summonerName = summoner.name;
+                summoner.matches = [];
+                summoner.matchesIds = []
                 delete summoner.id;
                 delete summoner.name;
                 data.push(summoner);

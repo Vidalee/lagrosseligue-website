@@ -32,6 +32,10 @@
         <router-link class="navbar-item tile-color" to="/staff" @click.native="changePage">
           Staff
         </router-link>
+
+        <router-link class="navbar-item tile-color" to="/champions" @click.native="changePage">
+          Champions
+        </router-link>
       </div>
 
       <div class="navbar-end">

@@ -18,10 +18,10 @@
           @input="getAsyncData"
           @select="option => select(option)"
         >
-          <template slot-scope="props">
-            <div class="media">
+          <template slot-scope="props" class="">
+            <div class="media" style="text-align: left;">
               <div class="media-left">
-                <img width="32" :src="`https://cdn.communitydragon.org/latest/profile-icon/${props.option.profileIconId}`">
+                <img width="42" :src="`https://cdn.communitydragon.org/latest/profile-icon/${props.option.profileIconId}`">
               </div>
               <div v-if="props.option.summonerName" class="media-content">
                 <span class="tag is-primary">

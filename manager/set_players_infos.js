@@ -10,15 +10,19 @@ const fs = require("fs");
 //     }
 // }
 
- for(let player of players){
-if(!player.summonerName){
-     player.summonerName = player.name;
-     delete player.name;
+for (let player of players) {
+     if (!player.summonerName) {
+          player.summonerName = player.name;
+          delete player.name;
+     }
+     if (!player.summonerId) {
+          player.summonerId = player.id;
+          delete player.id;
+     }
+     if(!player.matches){
+          player.matches = [];
+          player.matchesIds = [];
+     }
 }
-if(!player.summonerId){
-     player.summonerId = player.id;
-     delete player.id;
-}
- }
 fs.writeFileSync('teams.json', JSON.stringify(teams, null, 4));
 fs.writeFileSync('players.json', JSON.stringify(players, null, 4));
