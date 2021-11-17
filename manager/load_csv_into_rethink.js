@@ -38,14 +38,14 @@ async function main() {
                 const soloRank = rank.filter(r => r.queueType === "RANKED_SOLO_5x5");
                 if (soloRank.length > 0)
                     rankString = soloRank[0].tier + " " + soloRank[0].rank;
-                players.push({ flag: 0, accountId: summoner.accountId, summonerId: summoner.id, summonerName: summoner.name, profileIconId: summoner.profileIconId, soloRank: rankString });
+                players.push({ flag: 0, accountId: summoner.accountId, summonerId: summoner.id, summonerName: summoner.name.trim(), profileIconId: summoner.profileIconId, soloRank: rankString });
                 summoner.rank = soloRank;
                 summoner.soloRank = rankString;
                 summoner.flag = 0;
-                summoner.region = split[2];
-                summoner.team = split[1];
+                summoner.region = split[2].trim();
+                summoner.team = split[1].trim();
                 summoner.summonerId = summoner.id;
-                summoner.summonerName = summoner.name;
+                summoner.summonerName = summoner.name.trim();
                 summoner.matches = [];
                 summoner.matchesIds = []
                 delete summoner.id;
@@ -58,7 +58,7 @@ async function main() {
             }
         }
         teams.push({
-            name: split[1], region: split[2], custom_fields: {
+            name: split[1].trim(), region: split[2], custom_fields: {
                 coach: "",
                 capitaine_id: players[0].summonerId,
                 capitaine_summonerName: players[0].summonerName,

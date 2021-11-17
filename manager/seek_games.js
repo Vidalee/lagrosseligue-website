@@ -19,7 +19,7 @@ async function main() {
     let i = 0;
     let l = players.length;
     for (let player of players) {
-        
+        //if (player.summonerName !== "Glouups") continue;
         const history = await galeforce.lol.match.list()
             .puuid(player.puuid)
             .query({ type: "tourney", startTime: 1635724800 })
@@ -27,7 +27,7 @@ async function main() {
             .exec()
         //console.log(history);
         for (let matchId of history) {
-            if(matchesIds.includes(matchId)){
+            if (matchesIds.includes(matchId)) {
                 console.log("Already added", matchId);
                 continue;
             }
@@ -44,8 +44,10 @@ async function main() {
 main();
 console.log(matchesIds)
 async function handleGame(matchId) {
-    if (matchesIds.includes(matchId))
+    if (matchesIds.includes(matchId)) {
+        console.log("Already added", matchId);
         return;
+    }
     matchesIds.push(matchId);
     const game = await galeforce.lol.match.match()
         .matchId(matchId)
@@ -75,7 +77,7 @@ async function handleGame(matchId) {
 
     let teamBlue = players.find(player => player.summonerId === playerBlue.summonerId).team;
     let teamRed = players.find(player => player.summonerId === playerRed.summonerId).team;
-    
+
     const gl = {
         blue: teamBlue,
         red: teamRed,
@@ -85,17 +87,17 @@ async function handleGame(matchId) {
     for (let participant of game.info.participants) {
         let player = players.find(player => player.summonerId === participant.summonerId);
         if (player === undefined) {
-            await newPlayerFlagged(participant.summonerId, participant.teamId === 100 ? playerBlue : playerRed);
+            await newPlayerFlagged(participant.summonerId, players.find(player => player.summonerId === (participant.teamId === 100 ? playerBlue.summonerId : playerRed.summonerId)));
             player = players.find(player => player.summonerId === participant.summonerId);
             if (player === undefined) {
                 console.log("Player not found", participant.summonerName, game.metadata.matchId);
                 continue;
             }
         }
-        if(player.oldNames === undefined)
+        if (player.oldNames === undefined)
             player.oldNames = [];
-        
-        if(player.summonerName !== participant.summonerName && !player.oldNames.includes(participant.summonerName))
+
+        if (player.summonerName !== participant.summonerName && !player.oldNames.includes(participant.summonerName))
             player.oldNames.push(participant.summonerName);
 
         if (player.summonerId === playerBlue.summonerId)
@@ -128,12 +130,12 @@ async function handleGame(matchId) {
         player.matches.push(participant);
         player.matchesIds.push(matchId);
     }
-    
+
     game.gl = gl;
     matches.push(game);
 }
 
-async function newPlayerFlagged(summonerId, cpy){
+async function newPlayerFlagged(summonerId, cpy) {
     console.log(summonerId);
     const summoner = await getSummoner(summonerId);
     const rank = await getRank(summoner.id);
@@ -141,31 +143,37 @@ async function newPlayerFlagged(summonerId, cpy){
     const soloRank = rank.filter(r => r.queueType === "RANKED_SOLO_5x5");
     if (soloRank.length > 0)
         rankString = soloRank[0].tier + " " + soloRank[0].rank;
+
+    const team = teams.find(team => team.id === summoner.team);
+    if (team === undefined) {
+        console.log("Team not found", summoner.team);
+        return;
+    }
+    team.players.push({ flag: 1, accountId: summoner.accountId, summonerId: summoner.id, summonerName: summoner.name.trim(), profileIconId: summoner.profileIconId, soloRank: rankString });
+
     summoner.rank = rank;
     summoner.soloRank = rankString;
     summoner.flag = 1;
     summoner.team = cpy.team;
     summoner.summonerId = summoner.id;
     delete summoner.id;
-    summoner.summonerName = summoner.name;
+    summoner.summonerName = summoner.name.trim();
     delete summoner.name;
     summoner.region = cpy.region;
-    const team = teams.find(team => team.id === summoner.team);
-    if (team === undefined) {
-        console.log("Team not found", summoner.team);
-        return;
-    }
-    team.players.push(summoner);
+    summoner.matches = [];
+    summoner.matchesIds = [];
+
     players.push(summoner);
+    console.log(summoner);
 }
 
-function getSummoner(summonerId){
+function getSummoner(summonerId) {
     return galeforce.lol.summoner().summonerId(summonerId)
-    .region(galeforce.region.lol.EUROPE_WEST)
-    .exec();
+        .region(galeforce.region.lol.EUROPE_WEST)
+        .exec();
 }
-function getRank(id){
+function getRank(id) {
     return galeforce.lol.league.entries().summonerId(id)
-    .region(galeforce.region.lol.EUROPE_WEST)
-    .exec();
+        .region(galeforce.region.lol.EUROPE_WEST)
+        .exec();
 }
