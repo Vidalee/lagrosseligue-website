@@ -1,5 +1,7 @@
 # lagrosseligue-website
 
+Website for Riot Games' french university tournament, hosted at https://gl.vivide.re
+
 ## Client
 
 ```
